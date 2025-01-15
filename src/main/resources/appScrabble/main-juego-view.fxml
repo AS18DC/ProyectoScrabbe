@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="appScrabble.MainJuegoController" style="-fx-background-color: #32a3b8;">
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <children>
+                <Label text="Menú Scrabble" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+                <HBox alignment="CENTER" spacing="10">
+                    <Button text="Iniciar Juego" prefWidth="200" onAction="#onIniciarJuegoClick" />
+                </HBox>
+                <HBox alignment="CENTER" spacing="10">
+                    <Button text="Continuar Partida" prefWidth="200" onAction="#onContinuarPartidaClick" />
+                </HBox>
+                <HBox alignment="CENTER" spacing="10">
+                    <Button text="Salir" prefWidth="200" onAction="#onSalirClick" />
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

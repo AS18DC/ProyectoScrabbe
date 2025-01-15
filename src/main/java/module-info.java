@@ -1,9 +1,10 @@
-module com.example.scrabble {
+module appScrabble {
     requires javafx.controls;
     requires javafx.fxml;
 
     requires com.dlsc.formsfx;
+    requires com.google.gson;
 
-    opens com.example.scrabble to javafx.fxml;
-    exports com.example.scrabble;
+    opens appScrabble to javafx.fxml;
+    exports appScrabble;
 }
