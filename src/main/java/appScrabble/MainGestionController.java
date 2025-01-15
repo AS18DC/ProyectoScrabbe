@@ -88,15 +88,26 @@ public class MainGestionController {
 
     @FXML
     protected void onMostrarEstadisticasClick() {
-        mostrarMensaje("Mostrar estadísticas", "Función para mostrar estadísticas de un jugador");
-        // Aquí puedes agregar la lógica específica para mostrar estadísticas.
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("stats-jugador-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 700, 500);
+
+            StatsJugadorController statsJugadorController = fxmlLoader.getController();
+            statsJugadorController.setGestion(gestion);
+
+            Stage stage = new Stage();
+            stage.setTitle("Mostrar estadisticas de Jugador");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     protected void onSalirClick() {
         mostrarMensaje("Salir", "Cerrando la aplicación...");
-        // Aquí puedes cerrar la aplicación o realizar otras acciones necesarias.
-        System.exit(0); // Cerrar la aplicación
+        System.exit(0);
     }
 
     private void mostrarMensaje(String titulo, String contenido) {

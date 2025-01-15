@@ -1,5 +1,7 @@
 package appScrabble;
 
+import javafx.fxml.FXMLLoader;
+
 import java.io.File;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -53,46 +55,47 @@ public class Gestion {
          * Muestra las estadísticas de partidas de un jugador específico.
          * @param aliasJugador El alias del jugador.
          */
-    public void mostrarEstadisticasDePartidas(String aliasJugador) {
-        // Validar si el jugador existe
-        Jugador jugador = consultarJugador(aliasJugador);
-        if (jugador == null) {
-            System.out.println("El jugador con alias \"" + aliasJugador + "\" no existe.");
-            return;
-        }
+        public void mostrarEstadisticasDePartidas(String aliasJugador) {
+            // Validar si el jugador existe
+            Jugador jugador = consultarJugador(aliasJugador);
+            if (jugador == null) {
+                System.out.println("El jugador con alias \"" + aliasJugador + "\" no existe.");
+                return;
+            }
 
-        // Variables para acumular estadísticas
-        int partidasJugadas = 0;
-        int partidasGanadas = 0;
-        int totalPuntos = 0;
-        long totalTiempo = 0;
-        int totalPalabrasColocadas = 0;
+            // Variables para acumular estadísticas
+            int partidasJugadas = 0;
+            int partidasGanadas = 0;
+            int totalPuntos = 0;
+            long totalTiempo = 0;
+            int totalPalabrasColocadas = 0;
 
-        // Recorrer partidas para recolectar estadísticas
-        for (Partida partida : partidas) {
-            if (partida.getJugador1().getNombre().equalsIgnoreCase(aliasJugador) || partida.getJugador2().getNombre().equalsIgnoreCase(aliasJugador)) {
-                partidasJugadas++;
-                if (partida.isGano()) {
-                    partidasGanadas++;
+            // Recorrer partidas para recolectar estadísticas
+            for (Partida partida : partidas) {
+                if (partida.getJugador1().getNombre().equalsIgnoreCase(aliasJugador) || partida.getJugador2().getNombre().equalsIgnoreCase(aliasJugador)) {
+                    partidasJugadas++;
+                    if (partida.isGano()) {
+                        partidasGanadas++;
+                    }
+                    totalPuntos += partida.getPuntos();
+                    totalTiempo += partida.getTiempoTotal();
+                    totalPalabrasColocadas += partida.getPalabrasColocadas();
                 }
-                totalPuntos += partida.getPuntos();
-                totalTiempo += partida.getTiempoTotal();
-                totalPalabrasColocadas += partida.getPalabrasColocadas();
+            }
+
+            // Obtener el controlador de la interfaz y agregar estadísticas
+            StatsJugadorController controller = (StatsJugadorController) new FXMLLoader(getClass().getResource("stats-jugador-view.fxml")).getController();
+            if (partidasJugadas > 0) {
+                controller.agregarEstadistica("Partidas Jugadas", String.valueOf(partidasJugadas));
+                controller.agregarEstadistica("Partidas Ganadas", String.valueOf(partidasGanadas));
+                controller.agregarEstadistica("Total de Puntos", String.valueOf(totalPuntos));
+                controller.agregarEstadistica("Tiempo Total (segundos)", String.valueOf(totalTiempo));
+                controller.agregarEstadistica("Palabras Colocadas", String.valueOf(totalPalabrasColocadas));
+            } else {
+                controller.agregarEstadistica("Mensaje", "No se encontraron partidas registradas para este jugador.");
             }
         }
 
-        // Mostrar estadísticas o mensaje de falta de partidas
-        if (partidasJugadas > 0) {
-            System.out.println("Estadísticas de las partidas para el jugador \"" + aliasJugador + "\":");
-            System.out.println("Total de partidas jugadas: " + partidasJugadas);
-            System.out.println("Total de partidas ganadas: " + partidasGanadas);
-            System.out.println("Total de puntos: " + totalPuntos);
-            System.out.println("Total de tiempo jugado (en segundos): " + totalTiempo);
-            System.out.println("Total de palabras colocadas: " + totalPalabrasColocadas);
-        } else {
-            System.out.println("No se encontraron partidas registradas para el jugador \"" + aliasJugador + "\".");
-        }
-    }
 
 
     /**
