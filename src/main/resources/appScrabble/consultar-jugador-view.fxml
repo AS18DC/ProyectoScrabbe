@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20" xmlns:fx="http://javafx.com/fxml" fx:controller="appScrabble.ConsultarJugadorController">
+    <children>
+        <Label text="Consultar Jugador" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+        <HBox alignment="CENTER" spacing="10">
+            <Label text="Alias:" />
+            <TextField fx:id="aliasField" promptText="Ingrese el alias del jugador a buscar" />
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="20">
+            <Button text="Consultar" onAction="#onConsultarClick" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
+            <Button text="Cancelar" onAction="#onCancelarClick" style="-fx-background-color: #F44336; -fx-text-fill: white;" />
+        </HBox>
+    </children>
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+</VBox>

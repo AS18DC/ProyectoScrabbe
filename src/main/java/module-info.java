@@ -5,6 +5,6 @@ module appScrabble {
     requires com.dlsc.formsfx;
     requires com.google.gson;
 
-    opens appScrabble to javafx.fxml;
+    opens appScrabble to javafx.fxml, com.google.gson;
     exports appScrabble;
 }

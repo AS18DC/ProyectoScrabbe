@@ -19,7 +19,7 @@ public class FuncionesMainJuego {
         try {
             Jugador jugador1 = new Jugador("", "");
             Jugador jugador2 = new Jugador("", "");
-            String rutaDiccionario = "src/main/java/appJuego/listado-sin-acentos-txt";
+            String rutaDiccionario = "src/main/resources/listado.txt";
             juego = new Juego(jugador1, jugador2, rutaDiccionario);
             partidaIniciada = true;
 

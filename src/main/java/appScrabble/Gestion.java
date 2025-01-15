@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class Gestion {
 
-    private LinkedList<Jugador> jugadores;
+    protected LinkedList<Jugador> jugadores;
     private LinkedList<Partida> partidas;
 
     /**
@@ -178,8 +178,8 @@ public class Gestion {
 
         while (true) {
             System.out.println("\n--- Menú de opciones ---");
-            System.out.println("1. Registrar jugador");
-            System.out.println("2. Consultar jugador");
+//            System.out.println("1. Registrar jugador");
+//            System.out.println("2. Consultar jugador");
             System.out.println("3. Editar correo de un jugador");
             System.out.println("4. Editar alias de un jugador");
             System.out.println("5. Mostrar estadísticas de partidas");

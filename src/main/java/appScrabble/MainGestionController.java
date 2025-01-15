@@ -2,19 +2,52 @@ package appScrabble;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import java.io.IOException;
 
 public class MainGestionController {
+    private Gestion gestion;
+
+    public void setGestion(Gestion gestion) {
+        this.gestion = gestion;
+    }
 
     @FXML
     protected void onRegistrarJugadorClick() {
-        mostrarMensaje("Registrar jugador", "Función para registrar un jugador");
-        // Aquí puedes agregar la lógica específica para registrar un jugador.
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registrar-jugador-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 700, 500);
+
+            RegistrarJugadorController registrarController = fxmlLoader.getController();
+            registrarController.setGestion(gestion);
+
+            Stage stage = new Stage();
+            stage.setTitle("Registrar Jugador");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     protected void onConsultarJugadorClick() {
-        mostrarMensaje("Consultar jugador", "Función para consultar un jugador");
-        // Aquí puedes agregar la lógica específica para consultar un jugador.
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("consultar-jugador-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 700, 500);
+
+            ConsultarJugadorController consultarJugadorController = fxmlLoader.getController();
+            consultarJugadorController.setGestion(gestion);
+
+            Stage stage = new Stage();
+            stage.setTitle("Consultar Jugador");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -36,9 +69,10 @@ public class MainGestionController {
     }
 
     @FXML
-    protected void onVolverMenuClick() {
-        mostrarMensaje("Volver al menú principal", "Regresando al menú principal...");
-        // Aquí puedes agregar la lógica específica para volver al menú principal.
+    protected void onSalirClick() {
+        mostrarMensaje("Salir", "Cerrando la aplicación...");
+        // Aquí puedes cerrar la aplicación o realizar otras acciones necesarias.
+        System.exit(0); // Cerrar la aplicación
     }
 
     private void mostrarMensaje(String titulo, String contenido) {
