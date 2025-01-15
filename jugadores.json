@@ -1,0 +1,16 @@
+[
+  {
+    "nombre": "marco",
+    "correoElectronico": "marco@gmail.com",
+    "puntaje": 0,
+    "puntajePartida": 0,
+    "letras": []
+  },
+  {
+    "nombre": "ali",
+    "correoElectronico": "ali@gmail.com",
+    "puntaje": 0,
+    "puntajePartida": 0,
+    "letras": []
+  }
+]
