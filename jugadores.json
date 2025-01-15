@@ -12,5 +12,12 @@
     "puntaje": 0,
     "puntajePartida": 0,
     "letras": []
+  },
+  {
+    "nombre": "greto",
+    "correoElectronico": "greto2@gmail.com",
+    "puntaje": 0,
+    "puntajePartida": 0,
+    "letras": []
   }
 ]

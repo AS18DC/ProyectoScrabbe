@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
-public class RegistrarJugadorController {
+public class EditarCorreoJugadorController {
 
     @FXML
     private TextField aliasField;
@@ -19,19 +19,19 @@ public class RegistrarJugadorController {
     }
 
     @FXML
-    protected void onRegistrarClick() {
+    protected void onEditarClick() {
         String alias = aliasField.getText().trim();
-        String correo = correoField.getText().trim();
+        String correoNuevo = correoField.getText().trim();
 
-        if (alias.isEmpty() || correo.isEmpty()) {
-            mostrarMensaje("Error", "Todos los campos deben estar completos.");
+        if (alias.isEmpty() || correoNuevo.isEmpty()) {
+            mostrarMensaje("Error", "Los campos no pueden estar vacio.");
             return;
         }
 
         boolean validPlayer = false;
         while (!validPlayer) {
             try {
-                gestion.validarJugador(alias, correo); // Validar los datos del jugador
+                gestion.validarJugador(alias, correoNuevo); // Validar los datos del jugador
                 validPlayer = true; // Si no lanza excepción, la validación es exitosa
             } catch (JugadorInvalido e) {
                 mostrarMensaje("Datos inválidos", e.getMessage());
@@ -39,15 +39,15 @@ public class RegistrarJugadorController {
             }
         }
 
-        // Registrar el jugador
-        gestion.registrarJugador(correo, alias);
-
-        // Leer y guardar la lista de jugadores
+        boolean editado = gestion.editarCorreo(alias, correoNuevo);
         GestionListaJSON.leerJugadoresExistentes();
         GestionListaJSON.guardarJugadores(gestion.jugadores);
 
-        // Mostrar mensaje de confirmación
-        mostrarMensaje("Registro exitoso", "El jugador ha sido registrado correctamente.");
+        if (editado) {
+            mostrarMensaje("Correo Editado", "El correo del jugador con alias " + alias + " ha sido editado correctamente.");
+        } else {
+            mostrarMensaje("Error", "El jugador con alias " + alias + " no fue encontrado en la base de datos. Intente de nuevo.");
+        }
 
         // Limpiar los campos de texto
         aliasField.clear();

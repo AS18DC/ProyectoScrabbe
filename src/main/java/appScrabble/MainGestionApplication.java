@@ -15,7 +15,7 @@ public class MainGestionApplication extends Application {
         gestion = new Gestion();
 
         FXMLLoader fxmlLoader = new FXMLLoader(MainGestionApplication.class.getResource("main-gestion-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1860, 1000);
+        Scene scene = new Scene(fxmlLoader.load(), 700, 500);
 
         MainGestionController mainController = fxmlLoader.getController();
         mainController.setGestion(gestion);

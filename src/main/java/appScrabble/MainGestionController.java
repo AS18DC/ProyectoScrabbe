@@ -52,14 +52,38 @@ public class MainGestionController {
 
     @FXML
     protected void onEditarCorreoClick() {
-        mostrarMensaje("Editar correo de jugador", "Función para editar el correo de un jugador");
-        // Aquí puedes agregar la lógica específica para editar el correo de un jugador.
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("editar-correo-jugador-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 700, 500);
+
+            EditarCorreoJugadorController editarCorreoJugadorController = fxmlLoader.getController();
+            editarCorreoJugadorController.setGestion(gestion);
+
+            Stage stage = new Stage();
+            stage.setTitle("Editar correo de Jugador");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     protected void onEditarAliasClick() {
-        mostrarMensaje("Editar alias de jugador", "Función para editar el alias de un jugador");
-        // Aquí puedes agregar la lógica específica para editar el alias de un jugador.
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("editar-alias-jugador-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 700, 500);
+
+            EditarAliasJugadorController editarAliasJugadorController = fxmlLoader.getController();
+            editarAliasJugadorController.setGestion(gestion);
+
+            Stage stage = new Stage();
+            stage.setTitle("Editar alias de Jugador");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

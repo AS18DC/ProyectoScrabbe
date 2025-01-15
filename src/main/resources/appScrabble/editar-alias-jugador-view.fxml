@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="202.0" prefWidth="366.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="appScrabble.EditarAliasJugadorController">
+    <children>
+        <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Editar Alias del Jugador" />
+
+        <HBox alignment="CENTER" spacing="10">
+            <Label text="Alias:" />
+            <TextField fx:id="aliasField" promptText="Ingrese el alias del jugador" />
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="10">
+            <Label text="Nuevo Alias:">
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets></Label>
+            <TextField fx:id="aliasNuevoField" prefWidth="150.0" promptText="Ingrese el nuevo correo">
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <HBox.margin>
+               <Insets right="39.0" />
+            </HBox.margin></TextField>
+         <HBox prefHeight="25.0" prefWidth="0.0">
+         </HBox>
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="20">
+            <Button onAction="#onEditarClick" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Editar" />
+            <Button onAction="#onCancelarClick" style="-fx-background-color: #F44336; -fx-text-fill: white;" text="Cancelar" />
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+</VBox>

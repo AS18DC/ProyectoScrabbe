@@ -4,10 +4,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
-public class ConsultarJugadorController {
+public class EditarAliasJugadorController {
 
     @FXML
     private TextField aliasField;
+
+    @FXML
+    private TextField aliasNuevoField;
 
     private Gestion gestion;
 
@@ -16,28 +19,34 @@ public class ConsultarJugadorController {
     }
 
     @FXML
-    protected void onConsultarClick() {
+    protected void onEditarClick() {
         String alias = aliasField.getText().trim();
+        String aliasNuevo = aliasNuevoField.getText().trim();
 
-        if (alias.isEmpty()) {
-            mostrarMensaje("Error", "El campo no puede estar vacio.");
+        if (alias.isEmpty() || aliasNuevo.isEmpty()) {
+            mostrarMensaje("Error", "Los campos no pueden estar vacio.");
             return;
         }
 
-        Jugador jugador = gestion.consultarJugador(alias);
-        if (jugador != null) {
-            mostrarMensaje("Jugador Encontrado", "El jugador con alias " + alias + " ha sido encontrado en la base de datos.");
+        boolean editado = gestion.editarAlias(alias, aliasNuevo);
+        GestionListaJSON.leerJugadoresExistentes();
+        GestionListaJSON.guardarJugadores(gestion.jugadores);
+
+        if (editado) {
+            mostrarMensaje("Exito", "Alias editado correctamente.");
         } else {
-            mostrarMensaje("Error", "El jugador con alias " + alias + " no fue encontrado en la base de datos. Intente de nuevo.");
+            mostrarMensaje("Error", "No se encontro el alias a editar.");
         }
 
         // Limpiar los campos de texto
         aliasField.clear();
+        aliasNuevoField.clear();
     }
 
     @FXML
     protected void onCancelarClick() {
         aliasField.clear();
+        aliasNuevoField.clear();
     }
 
     private void mostrarMensaje(String titulo, String contenido) {

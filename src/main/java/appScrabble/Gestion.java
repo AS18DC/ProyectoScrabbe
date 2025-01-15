@@ -124,34 +124,40 @@ public class Gestion {
 
     /**
      * Edita el correo electrónico de un jugador.
-     * @param alias El alias del jugador.
+     *
+     * @param alias       El alias del jugador.
      * @param nuevoCorreo El nuevo correo electrónico del jugador.
+     * @return
      */
-    public void editarCorreo(String alias, String nuevoCorreo) {
+    public boolean editarCorreo(String alias, String nuevoCorreo) {
         for (Jugador jugador : jugadores) {
             if (jugador.getNombre().equalsIgnoreCase(alias)) {
                 jugador.setCorreoElectronico(nuevoCorreo);
                 System.out.println("El correo electrónico del jugador " + alias + " ha sido actualizado.");
-                return;
+                return true;
             }
         }
         System.out.println("Jugador con alias \"" + alias + "\" no encontrado.");
+        return false;
     }
 
     /**
      * Edita el alias de un jugador.
-     * @param alias El alias actual del jugador.
+     *
+     * @param alias      El alias actual del jugador.
      * @param nuevoAlias El nuevo alias del jugador.
+     * @return
      */
-    public void editarAlias(String alias, String nuevoAlias) {
+    public boolean editarAlias(String alias, String nuevoAlias) {
         for (Jugador jugador : jugadores) {
             if (jugador.getNombre().equalsIgnoreCase(alias)) {
                 jugador.setNombre(nuevoAlias);
                 System.out.println("El alias del jugador ha sido actualizado a " + nuevoAlias + ".");
-                return;
+                return true;
             }
         }
         System.out.println("Jugador con alias \"" + alias + "\" no encontrado.");
+        return false;
     }
 
     /**
