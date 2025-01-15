@@ -154,28 +154,17 @@ class Juego {
      *
      * @return El jugador seleccionado o null si no se encuentra.
      */
-    public Jugador seleccionJugador() {
-        Scanner scanner = new Scanner(System.in);
+    public Jugador seleccionJugador(String nombreJugador) {
         Gestion gestion = new Gestion();
-        Jugador jugador = null; // Inicializamos jugador como null
+        Jugador jugador = gestion.consultarJugador(nombreJugador); // Consultamos el jugador
 
-        while (jugador == null) { // Bucle que se ejecuta mientras jugador sea null
-            System.out.println("Coloque el nombre del jugador: ");
-            String nombreExistente = scanner.nextLine();
-            jugador = gestion.consultarJugador(nombreExistente); // Consultamos el jugador
-
-            if (jugador != null) {
-                System.out.println("Jugador encontrado.");
-            } else {
-                System.out.println("Jugador no encontrado. Desea volver al menu? si/no");// Mensaje si no se encuentra el jugador
-                String decision = scanner.nextLine();
-                if (decision.equalsIgnoreCase("Si")) {
-                    return null;
-                }
-            }
+        if (jugador != null) {
+            System.out.println("Jugador encontrado.");
+        } else {
+            System.out.println("Jugador no encontrado.");
         }
 
-        return jugador; // Retornamos el jugador encontrado
+        return jugador; // Retornamos el jugador encontrado o null si no se encuentra
     }
 
     /**
@@ -212,13 +201,13 @@ class Juego {
         System.out.println("!!! El juego ha iniciado !!!");
         System.out.println(" ");
         System.out.println("Datos Jugador 1: ");
-        jugador1 = seleccionJugador();
+        //jugador1 = seleccionJugador();
         if (jugador1 == null) {
             return false;
         }
         System.out.println(" ");
         System.out.println("Datos Jugador 2: ");
-        jugador2 = seleccionJugador();
+        //jugador2 = seleccionJugador();
         if (jugador2 == null) {
             return false;
         } else if (Objects.equals(jugador2.getNombre(), jugador1.getNombre())) {
