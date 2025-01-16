@@ -16,7 +16,7 @@ import java.util.Scanner;
 class Juego {
     private Jugador jugador1;
     private Jugador jugador2;
-    private Saco saco;
+    Saco saco;
     private Tablero tablero;
     private long tiempoInicio;
     private Diccionario diccionario;
@@ -208,7 +208,7 @@ class Juego {
         try {
             Thread.sleep(milisegundos);
         } catch (InterruptedException e) {
-            // Manejar la excepción si es necesario
+            Thread.currentThread().interrupt();
         }
     }
 

@@ -58,9 +58,8 @@ public class PartidaController {
     @FXML
     private Button btnStats;
 
-    private Tablero tableroLogico;
     private Juego juego;
-    private String letraSeleccionada; // Declare the field here
+    private String letraSeleccionada;
 
 
     public void setJuego(Juego juego) {
@@ -70,29 +69,25 @@ public class PartidaController {
     }
 
     public void initialize() {
-        tableroLogico = new Tablero(new Saco());
-        tableroLogico.colocarMultiplicadores();
-    }
-
-    void mostrarTablero() {
-        tablero.getChildren().clear();
-
-        String[][] matriz = tableroLogico.getTablero();
-        for (int fila = 0; fila < matriz.length; fila++) {
-            for (int col = 0; col < matriz[fila].length; col++) {
-                StackPane celda = new StackPane();
-                Rectangle fondo = new Rectangle(40, 40);
-                fondo.setStroke(Color.BLACK);
-
-                fondo.setFill(Color.LIGHTGRAY); // Default background color
-
-                String contenido = matriz[fila][col].trim();
-                Text texto = new Text(contenido.replaceAll("[^a-zA-Z0-9]", ""));
-                texto.setStyle("-fx-font-weight: bold;");
-                celda.getChildren().addAll(fondo, texto);
-                tablero.add(celda, col, fila);
+        for (int row = 0; row < 15; row++) {
+            for (int col = 0; col < 15; col++) {
+                Label label = getLabelAt(row, col);
+                if (label != null) {
+                    label.setPickOnBounds(true);
+                }
             }
         }
+    }
+
+    private Label getLabelAt(int row, int col) {
+        for (javafx.scene.Node node : tablero.getChildren()) {
+            if (GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == col) {
+                if (node instanceof Label) {
+                    return (Label) node;
+                }
+            }
+        }
+        return null;
     }
 
     void actualizarVistaJugadores() {
@@ -109,7 +104,8 @@ public class PartidaController {
             List<String> letras = juego.getJugadorEnTurno().getLetras();
 
             for (String letra : letras) {
-                Button botonFicha = new Button(letra);
+                int puntaje = juego.saco.obtenerPuntajeDeLaLetra(letra);
+                Button botonFicha = new Button(letra + " (" + puntaje + ")");
                 botonFicha.setPrefSize(50, 50);
                 botonFicha.setStyle("-fx-font-size: 14;");
                 botonFicha.setOnAction(e -> seleccionarLetra(letra));
@@ -127,19 +123,39 @@ public class PartidaController {
 
     @FXML
     private void handleCellClick(MouseEvent event) {
-        if (letraSeleccionada != null) {
-            StackPane celda = (StackPane) event.getSource();
-            int fila = (int) celda.getProperties().get("fila");
-            int col = (int) celda.getProperties().get("col");
+        if (event.getSource() instanceof Label) {
+            Label clickedLabel = (Label) event.getSource();
+            if (letraSeleccionada != null) {
+                // Obtener la fila y columna de la celda
+                Integer fila = GridPane.getRowIndex(clickedLabel);
+                Integer col = GridPane.getColumnIndex(clickedLabel);
 
-            Text texto = new Text(letraSeleccionada);
-            texto.setStyle("-fx-font-weight: bold;");
-            celda.getChildren().add(texto);
+                if (fila != null && col != null) {
+                    // Crear un nuevo texto con la letra seleccionada
+                    int puntaje = juego.saco.obtenerPuntajeDeLaLetra(letraSeleccionada);
+                    Text texto = new Text(letraSeleccionada + " (" + puntaje + ")");
 
-            juego.getJugadorEnTurno().getLetras().remove(letraSeleccionada);
-            letraSeleccionada = null;
-            actualizarLetrasJugador();
+                    texto.setStyle("-fx-font-weight: bold;");
+
+                    // Crear un StackPane para contener el texto
+                    StackPane celda = new StackPane();
+                    celda.getChildren().add(texto );
+
+                    // Reemplazar el Label con el StackPane en el GridPane
+                    tablero.getChildren().remove(clickedLabel);
+                    tablero.add(celda, col, fila);
+
+                    // Actualizar las letras del jugador
+                    juego.getJugadorEnTurno().getLetras().remove(letraSeleccionada);
+                    letraSeleccionada = null;
+                    actualizarLetrasJugador();
+                }
+            }
+            System.out.println("Clicked cell: " + clickedLabel.getText());
+        } else {
+            System.err.println("Clicked source is not a Label");
         }
+
     }
 
     public void resaltarJugadorEnTurno(boolean esJugador1Turno) {

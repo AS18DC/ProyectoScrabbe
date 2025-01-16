@@ -11,6 +11,8 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.StackPane?>
 <BorderPane prefHeight="853.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appScrabble.PartidaController">
     <!-- Sección superior: Información de los jugadores -->
     <top>
@@ -32,340 +34,382 @@
             <!-- Configuración de 15x15 celdas -->
             <columnConstraints>
                 <!-- 15 columnas iguales -->
-                <ColumnConstraints minWidth="30.0" prefWidth="30.0" />
-                <ColumnConstraints minWidth="30.0" prefWidth="30.0" />
-                <ColumnConstraints minWidth="30.0" prefWidth="30.0" />
-                <ColumnConstraints minWidth="30.0" prefWidth="30.0" />
-                <ColumnConstraints minWidth="30.0" prefWidth="30.0" />
-                <ColumnConstraints minWidth="30.0" prefWidth="30.0" />
-                <ColumnConstraints minWidth="30.0" prefWidth="30.0" />
-                <ColumnConstraints minWidth="30.0" prefWidth="30.0" />
-                <ColumnConstraints minWidth="30.0" prefWidth="30.0" />
-                <ColumnConstraints minWidth="30.0" prefWidth="30.0" />
-                <ColumnConstraints minWidth="30.0" prefWidth="30.0" />
-                <ColumnConstraints minWidth="30.0" prefWidth="30.0" />
-                <ColumnConstraints minWidth="30.0" prefWidth="30.0" />
-                <ColumnConstraints minWidth="30.0" prefWidth="30.0" />
-                <ColumnConstraints minWidth="30.0" prefWidth="30.0" />
+                <ColumnConstraints minWidth="40.0" prefWidth="40.0" />
+                <ColumnConstraints minWidth="40.0" prefWidth="40.0" />
+                <ColumnConstraints minWidth="40.0" prefWidth="40.0" />
+                <ColumnConstraints minWidth="40.0" prefWidth="40.0" />
+                <ColumnConstraints minWidth="40.0" prefWidth="40.0" />
+                <ColumnConstraints minWidth="40.0" prefWidth="40.0" />
+                <ColumnConstraints minWidth="40.0" prefWidth="40.0" />
+                <ColumnConstraints minWidth="40.0" prefWidth="40.0" />
+                <ColumnConstraints minWidth="40.0" prefWidth="40.0" />
+                <ColumnConstraints minWidth="40.0" prefWidth="40.0" />
+                <ColumnConstraints minWidth="40.0" prefWidth="40.0" />
+                <ColumnConstraints minWidth="40.0" prefWidth="40.0" />
+                <ColumnConstraints minWidth="40.0" prefWidth="40.0" />
+                <ColumnConstraints minWidth="40.0" prefWidth="40.0" />
+                <ColumnConstraints minWidth="40.0" prefWidth="40.0" />
             </columnConstraints>
             <rowConstraints>
                 <!-- 15 filas iguales -->
-                <RowConstraints minHeight="30.0" prefHeight="30.0" />
-                <RowConstraints minHeight="30.0" prefHeight="30.0" />
-                <RowConstraints minHeight="30.0" prefHeight="30.0" />
-                <RowConstraints minHeight="30.0" prefHeight="30.0" />
-                <RowConstraints minHeight="30.0" prefHeight="30.0" />
-                <RowConstraints minHeight="30.0" prefHeight="30.0" />
-                <RowConstraints minHeight="30.0" prefHeight="30.0" />
-                <RowConstraints minHeight="30.0" prefHeight="30.0" />
-                <RowConstraints maxHeight="60.0" minHeight="30.0" prefHeight="31.0" />
-                <RowConstraints maxHeight="29.0" minHeight="0.0" prefHeight="29.0" />
-                <RowConstraints minHeight="30.0" prefHeight="30.0" />
-                <RowConstraints minHeight="30.0" prefHeight="30.0" />
-                <RowConstraints minHeight="30.0" prefHeight="30.0" />
-                <RowConstraints minHeight="30.0" prefHeight="30.0" />
-                <RowConstraints minHeight="30.0" prefHeight="30.0" />
+                <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                <RowConstraints minHeight="40.0" prefHeight="40.0" />
             </rowConstraints>
+            <StackPane GridPane.columnIndex="5" GridPane.rowIndex="1">
+                <Rectangle width="40" height="40" fill="green" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="9" GridPane.rowIndex="1">
+                <Rectangle width="40" height="40" fill="green" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="1" GridPane.rowIndex="5">
+                <Rectangle width="40" height="40" fill="green" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="13" GridPane.rowIndex="5">
+                <Rectangle width="40" height="40" fill="green" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="1" GridPane.rowIndex="9">
+                <Rectangle width="40" height="40" fill="green" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="13" GridPane.rowIndex="9">
+                <Rectangle width="40" height="40" fill="green" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="5" GridPane.rowIndex="13">
+                <Rectangle width="40" height="40" fill="green" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="9" GridPane.rowIndex="13">
+                <Rectangle width="40" height="40" fill="green" />
+            </StackPane>
+            To create `StackPane` elements with a red background for the specified cells, you can modify the `partida-view.fxml` file as follows:
+
+            ```xml
+            <StackPane GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <Rectangle width="40" height="40" fill="red" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="7" GridPane.rowIndex="0">
+                <Rectangle width="40" height="40" fill="red" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="14" GridPane.rowIndex="0">
+                <Rectangle width="40" height="40" fill="red" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="0" GridPane.rowIndex="7">
+                <Rectangle width="40" height="40" fill="red" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="14" GridPane.rowIndex="7">
+                <Rectangle width="40" height="40" fill="red" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="0" GridPane.rowIndex="14">
+                <Rectangle width="40" height="40" fill="red" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="7" GridPane.rowIndex="14">
+                <Rectangle width="40" height="40" fill="red" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="14" GridPane.rowIndex="14">
+                <Rectangle width="40" height="40" fill="red" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="3" GridPane.rowIndex="0">
+                <Rectangle width="40" height="40" fill="blue" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="11" GridPane.rowIndex="0">
+                <Rectangle width="40" height="40" fill="blue" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="0" GridPane.rowIndex="3">
+                <Rectangle width="40" height="40" fill="blue" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="14" GridPane.rowIndex="3">
+                <Rectangle width="40" height="40" fill="blue" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="7" GridPane.rowIndex="7">
+                <Rectangle width="40" height="40" fill="blue" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="0" GridPane.rowIndex="11">
+                <Rectangle width="40" height="40" fill="blue" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="14" GridPane.rowIndex="11">
+                <Rectangle width="40" height="40" fill="blue" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="3" GridPane.rowIndex="14">
+                <Rectangle width="40" height="40" fill="blue" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="11" GridPane.rowIndex="14">
+                <Rectangle width="40" height="40" fill="blue" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Rectangle width="40" height="40" fill="yellow" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="13" GridPane.rowIndex="1">
+                <Rectangle width="40" height="40" fill="yellow" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="5" GridPane.rowIndex="5">
+                <Rectangle width="40" height="40" fill="yellow" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="9" GridPane.rowIndex="5">
+                <Rectangle width="40" height="40" fill="yellow" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="5" GridPane.rowIndex="9">
+                <Rectangle width="40" height="40" fill="yellow" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="9" GridPane.rowIndex="9">
+                <Rectangle width="40" height="40" fill="yellow" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="1" GridPane.rowIndex="13">
+                <Rectangle width="40" height="40" fill="yellow" />
+            </StackPane>
+            <StackPane GridPane.columnIndex="13" GridPane.rowIndex="13">
+                <Rectangle width="40" height="40" fill="yellow" />
+            </StackPane>
             <!-- Row 0 -->
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="3" GridPane.rowIndex="0" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="4" GridPane.rowIndex="0" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="5" GridPane.rowIndex="0" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="6" GridPane.rowIndex="0" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="7" GridPane.rowIndex="0" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="8" GridPane.rowIndex="0" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="9" GridPane.rowIndex="0" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="10" GridPane.rowIndex="0" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="11" GridPane.rowIndex="0" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="12" GridPane.rowIndex="0" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="13" GridPane.rowIndex="0" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="14" GridPane.rowIndex="0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: red; -fx-text-fill: white;" text="2XP" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: blue; -fx-text-fill: white;" text="3XP" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="6" GridPane.rowIndex="0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: red; -fx-text-fill: white;" text="2XP" GridPane.columnIndex="7" GridPane.rowIndex="0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="8" GridPane.rowIndex="0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="9" GridPane.rowIndex="0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="10" GridPane.rowIndex="0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: blue; -fx-text-fill: white;" text="3XP" GridPane.columnIndex="11" GridPane.rowIndex="0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="12" GridPane.rowIndex="0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="13" GridPane.rowIndex="0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: red; -fx-text-fill: white;" text="2XP" GridPane.columnIndex="14" GridPane.rowIndex="0" />
             <!-- Row 1 -->
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="8" GridPane.rowIndex="1" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="9" GridPane.rowIndex="1" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="10" GridPane.rowIndex="1" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="11" GridPane.rowIndex="1" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="12" GridPane.rowIndex="1" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="13" GridPane.rowIndex="1" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="14" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: yellow; -fx-text-fill: black;" text="3XL" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="10" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="11" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="12" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: yellow; -fx-text-fill: black;" text="3XL" GridPane.columnIndex="13" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="14" GridPane.rowIndex="1" />
             <!-- Row 2 -->
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="8" GridPane.rowIndex="2" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="9" GridPane.rowIndex="2" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="10" GridPane.rowIndex="2" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="11" GridPane.rowIndex="2" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="12" GridPane.rowIndex="2" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="13" GridPane.rowIndex="2" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="14" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="10" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="11" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="12" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="13" GridPane.rowIndex="2" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="14" GridPane.rowIndex="2" />
             <!-- Row 3 -->
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="8" GridPane.rowIndex="3" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="9" GridPane.rowIndex="3" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="10" GridPane.rowIndex="3" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="11" GridPane.rowIndex="3" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="12" GridPane.rowIndex="3" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="13" GridPane.rowIndex="3" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="14" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: blue; -fx-text-fill: white;" text="3XP" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="8" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="9" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="10" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="11" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="12" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="13" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: blue; -fx-text-fill: white;" text="3XP" GridPane.columnIndex="14" GridPane.rowIndex="3" />
             <!-- Row 4 -->
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="8" GridPane.rowIndex="4" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="9" GridPane.rowIndex="4" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="10" GridPane.rowIndex="4" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="11" GridPane.rowIndex="4" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="12" GridPane.rowIndex="4" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="13" GridPane.rowIndex="4" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="14" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="8" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="9" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="10" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="11" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="12" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="13" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="14" GridPane.rowIndex="4" />
             <!-- Row 5 -->
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="7" GridPane.rowIndex="5" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="8" GridPane.rowIndex="5" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="9" GridPane.rowIndex="5" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="10" GridPane.rowIndex="5" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="11" GridPane.rowIndex="5" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="12" GridPane.rowIndex="5" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="13" GridPane.rowIndex="5" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="14" GridPane.rowIndex="5" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: yellow; -fx-text-fill: black;" text="3XL" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="8" GridPane.rowIndex="5" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: yellow; -fx-text-fill: black;" text="3XL" GridPane.columnIndex="9" GridPane.rowIndex="5" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="10" GridPane.rowIndex="5" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="11" GridPane.rowIndex="5" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="12" GridPane.rowIndex="5" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="13" GridPane.rowIndex="5" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="14" GridPane.rowIndex="5" />
             <!-- Row 6 -->
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="7" GridPane.rowIndex="6" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="8" GridPane.rowIndex="6" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="9" GridPane.rowIndex="6" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="10" GridPane.rowIndex="6" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="11" GridPane.rowIndex="6" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="12" GridPane.rowIndex="6" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="13" GridPane.rowIndex="6" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="14" GridPane.rowIndex="6" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="8" GridPane.rowIndex="6" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="9" GridPane.rowIndex="6" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="10" GridPane.rowIndex="6" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="11" GridPane.rowIndex="6" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="12" GridPane.rowIndex="6" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="13" GridPane.rowIndex="6" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="14" GridPane.rowIndex="6" />
             <!-- Row 7 -->
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="0" GridPane.rowIndex="7" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="4" GridPane.rowIndex="7" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="5" GridPane.rowIndex="7" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="7" GridPane.rowIndex="7" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="8" GridPane.rowIndex="7" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="9" GridPane.rowIndex="7" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="10" GridPane.rowIndex="7" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="11" GridPane.rowIndex="7" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="12" GridPane.rowIndex="7" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="13" GridPane.rowIndex="7" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="14" GridPane.rowIndex="7" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: red; -fx-text-fill: white;" text="2XP" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: blue; -fx-text-fill: white;" text="3XP" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="8" GridPane.rowIndex="7" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="9" GridPane.rowIndex="7" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="10" GridPane.rowIndex="7" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="11" GridPane.rowIndex="7" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="12" GridPane.rowIndex="7" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="13" GridPane.rowIndex="7" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: red; -fx-text-fill: white;" text="2XP" GridPane.columnIndex="14" GridPane.rowIndex="7" />
             <!-- Row 8 -->
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="0" GridPane.rowIndex="8" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="3" GridPane.rowIndex="8" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="4" GridPane.rowIndex="8" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="5" GridPane.rowIndex="8" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="6" GridPane.rowIndex="8" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="7" GridPane.rowIndex="8" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="8" GridPane.rowIndex="8" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="9" GridPane.rowIndex="8" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="10" GridPane.rowIndex="8" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="11" GridPane.rowIndex="8" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="12" GridPane.rowIndex="8" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="13" GridPane.rowIndex="8" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="14" GridPane.rowIndex="8" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="6" GridPane.rowIndex="8" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="7" GridPane.rowIndex="8" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="8" GridPane.rowIndex="8" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="9" GridPane.rowIndex="8" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="10" GridPane.rowIndex="8" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="11" GridPane.rowIndex="8" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="12" GridPane.rowIndex="8" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="13" GridPane.rowIndex="8" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="14" GridPane.rowIndex="8" />
             <!-- Row 9 -->
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="0" GridPane.rowIndex="9" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="3" GridPane.rowIndex="9" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="4" GridPane.rowIndex="9" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="5" GridPane.rowIndex="9" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="6" GridPane.rowIndex="9" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="7" GridPane.rowIndex="9" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="8" GridPane.rowIndex="9" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="9" GridPane.rowIndex="9" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="10" GridPane.rowIndex="9" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="11" GridPane.rowIndex="9" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="12" GridPane.rowIndex="9" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="13" GridPane.rowIndex="9" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="14" GridPane.rowIndex="9" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: yellow; -fx-text-fill: black;" text="3XL" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="6" GridPane.rowIndex="9" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="7" GridPane.rowIndex="9" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="8" GridPane.rowIndex="9" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: yellow; -fx-text-fill: black;" text="3XL" GridPane.columnIndex="9" GridPane.rowIndex="9" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="10" GridPane.rowIndex="9" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="11" GridPane.rowIndex="9" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="12" GridPane.rowIndex="9" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="13" GridPane.rowIndex="9" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="14" GridPane.rowIndex="9" />
             <!-- Row 10 -->
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="0" GridPane.rowIndex="10" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="2" GridPane.rowIndex="10" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="3" GridPane.rowIndex="10" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="4" GridPane.rowIndex="10" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="5" GridPane.rowIndex="10" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="6" GridPane.rowIndex="10" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="7" GridPane.rowIndex="10" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="8" GridPane.rowIndex="10" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="9" GridPane.rowIndex="10" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="10" GridPane.rowIndex="10" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="11" GridPane.rowIndex="10" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="12" GridPane.rowIndex="10" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="13" GridPane.rowIndex="10" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="14" GridPane.rowIndex="10" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="5" GridPane.rowIndex="10" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="6" GridPane.rowIndex="10" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="7" GridPane.rowIndex="10" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="8" GridPane.rowIndex="10" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="9" GridPane.rowIndex="10" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="10" GridPane.rowIndex="10" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="11" GridPane.rowIndex="10" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="12" GridPane.rowIndex="10" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="13" GridPane.rowIndex="10" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="14" GridPane.rowIndex="10" />
             <!-- Row 11 -->
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="0" GridPane.rowIndex="11" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="2" GridPane.rowIndex="11" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="3" GridPane.rowIndex="11" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="4" GridPane.rowIndex="11" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="5" GridPane.rowIndex="11" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="6" GridPane.rowIndex="11" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="7" GridPane.rowIndex="11" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="8" GridPane.rowIndex="11" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="9" GridPane.rowIndex="11" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="10" GridPane.rowIndex="11" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="11" GridPane.rowIndex="11" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="12" GridPane.rowIndex="11" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="13" GridPane.rowIndex="11" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="14" GridPane.rowIndex="11" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: blue; -fx-text-fill: white;" text="3XP" GridPane.columnIndex="0" GridPane.rowIndex="11" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="4" GridPane.rowIndex="11" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="5" GridPane.rowIndex="11" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="6" GridPane.rowIndex="11" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="7" GridPane.rowIndex="11" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="8" GridPane.rowIndex="11" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="9" GridPane.rowIndex="11" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="10" GridPane.rowIndex="11" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="11" GridPane.rowIndex="11" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="12" GridPane.rowIndex="11" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="13" GridPane.rowIndex="11" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: blue; -fx-text-fill: white;" text="3XP" GridPane.columnIndex="14" GridPane.rowIndex="11" />
             <!-- Row 12 -->
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="0" GridPane.rowIndex="12" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="1" GridPane.rowIndex="12" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="2" GridPane.rowIndex="12" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="3" GridPane.rowIndex="12" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="4" GridPane.rowIndex="12" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="5" GridPane.rowIndex="12" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="6" GridPane.rowIndex="12" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="7" GridPane.rowIndex="12" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="8" GridPane.rowIndex="12" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="9" GridPane.rowIndex="12" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="10" GridPane.rowIndex="12" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="11" GridPane.rowIndex="12" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="12" GridPane.rowIndex="12" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="13" GridPane.rowIndex="12" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="14" GridPane.rowIndex="12" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="0" GridPane.rowIndex="12" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="4" GridPane.rowIndex="12" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="5" GridPane.rowIndex="12" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="6" GridPane.rowIndex="12" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="7" GridPane.rowIndex="12" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="8" GridPane.rowIndex="12" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="9" GridPane.rowIndex="12" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="10" GridPane.rowIndex="12" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="11" GridPane.rowIndex="12" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="12" GridPane.rowIndex="12" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="13" GridPane.rowIndex="12" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="14" GridPane.rowIndex="12" />
             <!-- Row 13 -->
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="0" GridPane.rowIndex="13" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="1" GridPane.rowIndex="13" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="2" GridPane.rowIndex="13" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="3" GridPane.rowIndex="13" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="4" GridPane.rowIndex="13" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="5" GridPane.rowIndex="13" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="6" GridPane.rowIndex="13" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="7" GridPane.rowIndex="13" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="8" GridPane.rowIndex="13" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="9" GridPane.rowIndex="13" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="10" GridPane.rowIndex="13" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="11" GridPane.rowIndex="13" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="12" GridPane.rowIndex="13" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="13" GridPane.rowIndex="13" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="14" GridPane.rowIndex="13" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="0" GridPane.rowIndex="13" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: yellow; -fx-text-fill: black;" text="3XL" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="3" GridPane.rowIndex="13" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="4" GridPane.rowIndex="13" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="5" GridPane.rowIndex="13" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="6" GridPane.rowIndex="13" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="7" GridPane.rowIndex="13" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="8" GridPane.rowIndex="13" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="9" GridPane.rowIndex="13" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="10" GridPane.rowIndex="13" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="11" GridPane.rowIndex="13" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="12" GridPane.rowIndex="13" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: yellow; -fx-text-fill: black;" text="3XL" GridPane.columnIndex="13" GridPane.rowIndex="13" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="14" GridPane.rowIndex="13" />
             <!-- Row 14 -->
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="0" GridPane.rowIndex="14" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="1" GridPane.rowIndex="14" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="2" GridPane.rowIndex="14" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="3" GridPane.rowIndex="14" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="4" GridPane.rowIndex="14" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="5" GridPane.rowIndex="14" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="6" GridPane.rowIndex="14" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="7" GridPane.rowIndex="14" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="8" GridPane.rowIndex="14" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="9" GridPane.rowIndex="14" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="10" GridPane.rowIndex="14" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="11" GridPane.rowIndex="14" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="12" GridPane.rowIndex="14" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="13" GridPane.rowIndex="14" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="14" GridPane.rowIndex="14" />
-            <!-- Row 15 -->
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="0" GridPane.rowIndex="15" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="1" GridPane.rowIndex="15" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="2" GridPane.rowIndex="15" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="3" GridPane.rowIndex="15" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="4" GridPane.rowIndex="15" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="5" GridPane.rowIndex="15" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="6" GridPane.rowIndex="15" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="7" GridPane.rowIndex="15" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="8" GridPane.rowIndex="15" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="9" GridPane.rowIndex="15" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="10" GridPane.rowIndex="15" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="11" GridPane.rowIndex="15" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="12" GridPane.rowIndex="15" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="13" GridPane.rowIndex="15" />
-            <Label onMouseClicked="#handleCellClick" GridPane.columnIndex="14" GridPane.rowIndex="15" />
-
-            <Label contentDisplay="CENTER" style="-fx-background-color: red; -fx-text-fill: white;" text="2XP" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <Label style="-fx-background-color: red; -fx-text-fill: white;" text="2XP" GridPane.columnIndex="7" GridPane.rowIndex="0" />
-            <Label style="-fx-background-color: red; -fx-text-fill: white;" text="2XP" GridPane.columnIndex="14" GridPane.rowIndex="0" />
-            <Label style="-fx-background-color: red; -fx-text-fill: white;" text="2XP" GridPane.columnIndex="0" GridPane.rowIndex="7" />
-            <Label style="-fx-background-color: red; -fx-text-fill: white;" text="2XP" GridPane.columnIndex="14" GridPane.rowIndex="7" />
-            <Label style="-fx-background-color: red; -fx-text-fill: white;" text="2XP" GridPane.columnIndex="0" GridPane.rowIndex="14" />
-            <Label style="-fx-background-color: red; -fx-text-fill: white;" text="2XP" GridPane.columnIndex="7" GridPane.rowIndex="14" />
-            <Label style="-fx-background-color: red; -fx-text-fill: white;" text="2XP" GridPane.columnIndex="14" GridPane.rowIndex="14" />
-
-            <!-- Triple palabra -->
-            <Label style="-fx-background-color: blue; -fx-text-fill: white;" text="3XP" GridPane.columnIndex="3" GridPane.rowIndex="0" />
-            <Label style="-fx-background-color: blue; -fx-text-fill: white;" text="3XP" GridPane.columnIndex="11" GridPane.rowIndex="0" />
-            <Label style="-fx-background-color: blue; -fx-text-fill: white;" text="3XP" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-            <Label style="-fx-background-color: blue; -fx-text-fill: white;" text="3XP" GridPane.columnIndex="14" GridPane.rowIndex="3" />
-            <Label style="-fx-background-color: blue; -fx-text-fill: white;" text="3XP" GridPane.columnIndex="0" GridPane.rowIndex="11" />
-            <Label style="-fx-background-color: blue; -fx-text-fill: white;" text="3XP" GridPane.columnIndex="14" GridPane.rowIndex="11" />
-            <Label style="-fx-background-color: blue; -fx-text-fill: white;" text="3XP" GridPane.columnIndex="3" GridPane.rowIndex="14" />
-            <Label style="-fx-background-color: blue; -fx-text-fill: white;" text="3XP" GridPane.columnIndex="11" GridPane.rowIndex="14" />
-            <Label style="-fx-background-color: blue; -fx-text-fill: white;" text="3XP" GridPane.columnIndex="7" GridPane.rowIndex="7" />
-
-            <!-- Doble letra -->
-            <Label style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <Label style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="9" GridPane.rowIndex="1" />
-            <Label style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-            <Label style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="9" GridPane.rowIndex="5" />
-            <Label style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="13" GridPane.rowIndex="5" />
-            <Label style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <Label style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="5" GridPane.rowIndex="9" />
-            <Label style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="9" GridPane.rowIndex="9" />
-            <Label style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="13" GridPane.rowIndex="9" />
-            <Label style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="5" GridPane.rowIndex="13" />
-            <Label style="-fx-background-color: green; -fx-text-fill: white;" text="2XL" GridPane.columnIndex="9" GridPane.rowIndex="13" />
-
-            <!-- Triple letra -->
-            <Label style="-fx-background-color: yellow; -fx-text-fill: black;" text="3XL" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label style="-fx-background-color: yellow; -fx-text-fill: black;" text="3XL" GridPane.columnIndex="13" GridPane.rowIndex="1" />
-            <Label style="-fx-background-color: yellow; -fx-text-fill: black;" text="3XL" GridPane.columnIndex="1" GridPane.rowIndex="13" />
-            <Label style="-fx-background-color: yellow; -fx-text-fill: black;" text="3XL" GridPane.columnIndex="13" GridPane.rowIndex="13" />
-            <Label style="-fx-background-color: yellow; -fx-text-fill: black;" text="3XL" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-            <Label style="-fx-background-color: yellow; -fx-text-fill: black;" text="3XL" GridPane.columnIndex="9" GridPane.rowIndex="5" />
-            <Label style="-fx-background-color: yellow; -fx-text-fill: black;" text="3XL" GridPane.columnIndex="5" GridPane.rowIndex="9" />
-            <Label style="-fx-background-color: yellow; -fx-text-fill: black;" text="3XL" GridPane.columnIndex="9" GridPane.rowIndex="9" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: red; -fx-text-fill: white;" text="2XP" GridPane.columnIndex="0" GridPane.rowIndex="14" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: blue; -fx-text-fill: white;" text="3XP" GridPane.columnIndex="3" GridPane.rowIndex="14" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="4" GridPane.rowIndex="14" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="5" GridPane.rowIndex="14" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="6" GridPane.rowIndex="14" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: red; -fx-text-fill: white;" text="2XP" GridPane.columnIndex="7" GridPane.rowIndex="14" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="8" GridPane.rowIndex="14" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="9" GridPane.rowIndex="14" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="10" GridPane.rowIndex="14" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: blue; -fx-text-fill: white;" text="3XP" GridPane.columnIndex="11" GridPane.rowIndex="14" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="12" GridPane.rowIndex="14" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" GridPane.columnIndex="13" GridPane.rowIndex="14" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#handleCellClick" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: red; -fx-text-fill: white;" text="2XP" GridPane.columnIndex="14" GridPane.rowIndex="14" />
         </GridPane>
     </center>
 
@@ -376,13 +420,13 @@
             <HBox fx:id="letrasJugador" alignment="CENTER" prefHeight="100.0" prefWidth="757.0" spacing="5" style="-fx-padding: 5; -fx-border-color: black; -fx-border-width: 2;">
                 <!-- Fichas dinámicas -->
                 <children>
-                    <Button fx:id="letra1" prefHeight="51.0" prefWidth="60.0" style="-fx-font-size: 14;" text="F1" />
-                    <Button fx:id="letra2" prefHeight="50.0" prefWidth="50.0" style="-fx-font-size: 14;" text="F2" />
-                    <Button fx:id="letra3" prefHeight="50.0" prefWidth="50.0" style="-fx-font-size: 14;" text="F3" />
-                    <Button fx:id="letra4" prefHeight="50.0" prefWidth="50.0" style="-fx-font-size: 14;" text="F4" />
-                    <Button fx:id="letra5" prefHeight="50.0" prefWidth="50.0" style="-fx-font-size: 14;" text="F5" />
-                    <Button fx:id="letra6" prefHeight="50.0" prefWidth="50.0" style="-fx-font-size: 14;" text="F6" />
-                    <Button fx:id="letra7" prefHeight="50.0" prefWidth="50.0" style="-fx-font-size: 14;" text="F7" />
+                    <Button fx:id="letra1" prefHeight="50.0" prefWidth="80.0" style="-fx-font-size: 14;" text="F1" />
+                    <Button fx:id="letra2" prefHeight="50.0" prefWidth="80.0" style="-fx-font-size: 14;" text="F2" />
+                    <Button fx:id="letra3" prefHeight="50.0" prefWidth="80.0" style="-fx-font-size: 14;" text="F3" />
+                    <Button fx:id="letra4" prefHeight="50.0" prefWidth="80.0" style="-fx-font-size: 14;" text="F4" />
+                    <Button fx:id="letra5" prefHeight="50.0" prefWidth="80.0" style="-fx-font-size: 14;" text="F5" />
+                    <Button fx:id="letra6" prefHeight="50.0" prefWidth="80.0" style="-fx-font-size: 14;" text="F6" />
+                    <Button fx:id="letra7" prefHeight="50.0" prefWidth="80.0" style="-fx-font-size: 14;" text="F7" />
                <VBox prefHeight="72.0" prefWidth="29.0" />
                     <!-- Botón "UNDO" al final -->
                     <Button fx:id="btnDeshacer" alignment="CENTER" minWidth="75.0" prefHeight="50.0" prefWidth="80.0" style="-fx-font-size: 12; -fx-min-width: 80;" HBox.hgrow="ALWAYS">
