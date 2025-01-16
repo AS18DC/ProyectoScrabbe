@@ -162,10 +162,8 @@ public class PartidaController {
 
     @FXML
     protected void onBolsaFichasClick() {
-        // Obtener el número total de letras en el saco
         int totalLetras = saco.contarLetrasEnSaco();
 
-        // Crear un mensaje para mostrar las letras restantes
         StringBuilder mensaje = new StringBuilder();
         mensaje.append("Letras restantes en el saco:\n");
 
@@ -176,7 +174,6 @@ public class PartidaController {
         }
         mensaje.append("\nTotal de letras restantes: ").append(totalLetras);
 
-        // Mostrar el mensaje en la interfaz gráfica
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Letras en el Saco");
         alert.setHeaderText(null);
