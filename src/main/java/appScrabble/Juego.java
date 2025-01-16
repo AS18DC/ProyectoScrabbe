@@ -489,21 +489,6 @@ class Juego {
 
         tablero.colocarMultiplicadores();
 
-        // Actualizar la interfaz gráfica
-        Platform.runLater(() -> {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/path/to/your/fxml/file.fxml"));
-                Parent root = loader.load();
-                PartidaController controller = loader.getController();
-                controller.setJuego(this);
-                controller.actualizarVistaJugadores();
-                controller.resaltarJugadorEnTurno(turnoJugador1);
-                controller.mostrarTablero();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
         return true;
     }
 
