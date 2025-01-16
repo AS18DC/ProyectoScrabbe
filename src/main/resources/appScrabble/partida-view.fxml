@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.layout.StackPane?>
+
 <BorderPane prefHeight="853.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appScrabble.PartidaController">
     <!-- Sección superior: Información de los jugadores -->
     <top>
@@ -458,7 +458,7 @@
                   </ImageView>
                </graphic></Button>
                 <Button fx:id="btnEnviar" prefHeight="57.0" prefWidth="290.0" style="-fx-font-size: 12; -fx-min-width: 80;" text="ENVIAR" />
-                <Button fx:id="btnBolsaFichas" prefHeight="57.0" prefWidth="95.0" style="-fx-font-size: 12; -fx-min-width: 80;">
+                <Button fx:id="btnBolsaFichas" onAction="#onBolsaFichasClick" prefHeight="57.0" prefWidth="95.0" style="-fx-font-size: 12; -fx-min-width: 80;">
                <graphic>
                   <ImageView fitHeight="42.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
