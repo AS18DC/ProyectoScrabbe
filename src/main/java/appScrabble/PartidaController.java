@@ -3,12 +3,16 @@ package appScrabble;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+
+import java.util.List;
 
 public class PartidaController {
 
@@ -33,21 +37,8 @@ public class PartidaController {
     @FXML
     private GridPane tablero;
 
-    private Tablero tableroLogico;
-
-    private Juego juego;
-
     @FXML
-    private Button btnEstadisticas;
-
-    @FXML
-    private Button btnEnviar;
-
-    @FXML
-    private Button btnDeshacer;
-
-    @FXML
-    private Button btnBolsaFichas;
+    private HBox letrasJugador;
 
     @FXML
     private Button btnPasar;
@@ -55,11 +46,27 @@ public class PartidaController {
     @FXML
     private Button btnCambiarFichas;
 
+    @FXML
+    private Button btnEnviar;
+
+    @FXML
+    private Button btnBolsaFichas;
+
+    @FXML
+    private Button btnDeshacer;
+
+    @FXML
+    private Button btnStats;
+
+    private Tablero tableroLogico;
+    private Juego juego;
+    private String letraSeleccionada; // Declare the field here
 
 
     public void setJuego(Juego juego) {
         this.juego = juego;
         actualizarVistaJugadores();
+        actualizarLetrasJugador();
     }
 
     public void initialize() {
@@ -71,49 +78,72 @@ public class PartidaController {
         mostrarTablero();
     }
 
-    private void mostrarTablero() {
-        // Limpiar cualquier contenido previo del GridPane
+    void mostrarTablero() {
         tablero.getChildren().clear();
 
         String[][] matriz = tableroLogico.getTablero();
         for (int fila = 0; fila < matriz.length; fila++) {
             for (int col = 0; col < matriz[fila].length; col++) {
-                // Crear una celda visual para cada posición en el tablero
                 StackPane celda = new StackPane();
-                Rectangle fondo = new Rectangle(40, 40); // Tamaño de cada celda
-                fondo.setStroke(Color.BLACK); // Borde negro
+                Rectangle fondo = new Rectangle(40, 40);
+                fondo.setStroke(Color.BLACK);
 
-                // Estilo según el contenido
+                fondo.setFill(Color.LIGHTGRAY); // Default background color
+
                 String contenido = matriz[fila][col].trim();
-                if (contenido.contains("3XP")) {
-                    fondo.setFill(Color.BLUE); // Triple palabra
-                } else if (contenido.contains("2XP")) {
-                    fondo.setFill(Color.RED); // Doble palabra
-                } else if (contenido.contains("3XL")) {
-                    fondo.setFill(Color.YELLOW); // Triple letra
-                } else if (contenido.contains("2XL")) {
-                    fondo.setFill(Color.GREEN); // Doble letra
-                } else {
-                    fondo.setFill(Color.LIGHTGRAY); // Fondo normal
-                }
-
-                // Mostrar texto dentro de la celda
-                Text texto = new Text(contenido.replaceAll("[^a-zA-Z0-9]", "")); // Limpiar colores ANSI
+                Text texto = new Text(contenido.replaceAll("[^a-zA-Z0-9]", ""));
                 texto.setStyle("-fx-font-weight: bold;");
-
-                // Añadir elementos a la celda
                 celda.getChildren().addAll(fondo, texto);
-                tablero.add(celda, col, fila); // Agregar celda a la cuadrícula
+                tablero.add(celda, col, fila);
             }
         }
     }
 
-    private void actualizarVistaJugadores() {
+    void actualizarVistaJugadores() {
         nombreJugador1.setText(juego.getJugador1().getNombre());
         scoreJugador1.setText("Puntos: " + juego.getJugador1().getPuntajePartida());
 
         nombreJugador2.setText(juego.getJugador2().getNombre());
         scoreJugador2.setText("Puntos: " + juego.getJugador2().getPuntajePartida());
+    }
+
+    private void actualizarLetrasJugador() {
+        if (letrasJugador != null) {
+            letrasJugador.getChildren().clear();
+            List<String> letras = juego.getJugadorEnTurno().getLetras();
+
+            for (String letra : letras) {
+                Button botonFicha = new Button(letra);
+                botonFicha.setPrefSize(50, 50);
+                botonFicha.setStyle("-fx-font-size: 14;");
+                botonFicha.setOnAction(e -> seleccionarLetra(letra));
+                letrasJugador.getChildren().add(botonFicha);
+            }
+        } else {
+            System.err.println("letrasJugador is not initialized.");
+        }
+
+    }
+
+    private void seleccionarLetra(String letra) {
+        letraSeleccionada = letra;
+    }
+
+    @FXML
+    private void handleCellClick(MouseEvent event) {
+        if (letraSeleccionada != null) {
+            StackPane celda = (StackPane) event.getSource();
+            int fila = (int) celda.getProperties().get("fila");
+            int col = (int) celda.getProperties().get("col");
+
+            Text texto = new Text(letraSeleccionada);
+            texto.setStyle("-fx-font-weight: bold;");
+            celda.getChildren().add(texto);
+
+            juego.getJugadorEnTurno().getLetras().remove(letraSeleccionada);
+            letraSeleccionada = null;
+            actualizarLetrasJugador();
+        }
     }
 
     public void resaltarJugadorEnTurno(boolean esJugador1Turno) {
@@ -138,12 +168,15 @@ public class PartidaController {
 
     @FXML
     protected void onPasarClick() {
-        // Lógica para pasar el turno
+        juego.pasarTurno();
+        resaltarJugadorEnTurno(juego.esTurnoJugador1());
+        actualizarLetrasJugador();
     }
 
     @FXML
     protected void onCambiarFichasClick() {
-        // Cambiar todas las fichas y pasar turno
+        juego.cambiarFichasJugadorEnTurno();
+        actualizarLetrasJugador();
     }
 
     @FXML

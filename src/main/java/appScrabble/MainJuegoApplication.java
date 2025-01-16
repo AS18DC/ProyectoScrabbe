@@ -21,7 +21,7 @@ public class MainJuegoApplication extends Application {
 
         juego = new Juego(jugador1, jugador2, filePath);
 
-        FXMLLoader fxmlLoader = new FXMLLoader(MainJuegoApplication.class.getResource("main-juego-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainJuegoApplication.class.getResource("/appScrabble/main-juego-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 700, 500);
 
         MainJuegoController mainController = fxmlLoader.getController();
