@@ -70,12 +70,8 @@ public class PartidaController {
     }
 
     public void initialize() {
-        // Inicializar el tablero lógico y sus multiplicadores
         tableroLogico = new Tablero(new Saco());
         tableroLogico.colocarMultiplicadores();
-
-        // Dibujar el tablero visual
-        mostrarTablero();
     }
 
     void mostrarTablero() {

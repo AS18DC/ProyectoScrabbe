@@ -84,8 +84,6 @@ public class LoginJugadorController {
     }
 
 
-
-
     private void mostrarMensaje(String titulo, String contenido) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titulo);
