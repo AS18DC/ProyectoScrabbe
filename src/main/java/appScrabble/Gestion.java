@@ -125,10 +125,26 @@ public class Gestion {
         return null;
     }
 
+    public Jugador consultarCorreo(String correo) {
+        GestionListaJSON.leerJugadoresExistentes();
+        for (Jugador jugador : jugadores) {
+            if (jugador.getCorreoElectronico().equalsIgnoreCase(correo)) {
+                return jugador;
+            }
+        }
+        return null;
+    }
+
     public boolean estaEnLista(String nombreJugador) {
-        // Lógica para consultar si el jugador está en la lista guardada
         Gestion gestion = new Gestion();
         Jugador jugador = gestion.consultarJugador(nombreJugador);
+
+        return jugador != null;
+    }
+
+    public boolean correoEnLista(String correo) {
+        Gestion gestion = new Gestion();
+        Jugador jugador = gestion.consultarCorreo(correo);
 
         return jugador != null;
     }
