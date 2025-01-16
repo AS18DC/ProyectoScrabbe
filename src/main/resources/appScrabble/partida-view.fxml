@@ -92,9 +92,6 @@
             <StackPane GridPane.columnIndex="9" GridPane.rowIndex="13">
                 <Rectangle width="40" height="40" fill="green" />
             </StackPane>
-            To create `StackPane` elements with a red background for the specified cells, you can modify the `partida-view.fxml` file as follows:
-
-            ```xml
             <StackPane GridPane.columnIndex="0" GridPane.rowIndex="0">
                 <Rectangle width="40" height="40" fill="red" />
             </StackPane>
