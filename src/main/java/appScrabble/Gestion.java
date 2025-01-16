@@ -179,6 +179,25 @@ public class Gestion {
     }
 
     /**
+     * Elimina un jugador basado en su alias.
+     *
+     * @param alias El alias del jugador a eliminar.
+     * @return true si el jugador fue eliminado con éxito, false si no se encontró el jugador.
+     */
+    public boolean eliminarJugador(String alias) {
+        for (Jugador jugador : jugadores) {
+            if (jugador.getNombre().equalsIgnoreCase(alias)) {
+                jugadores.remove(jugador);
+                System.out.println("Jugador con alias \"" + alias + "\" ha sido eliminado exitosamente.");
+                return true;
+            }
+        }
+        System.out.println("Jugador con alias \"" + alias + "\" no encontrado.");
+        return false;
+    }
+
+
+    /**
      * Muestra el menú de registro de jugadores y gestiona las opciones seleccionadas.
      * @param gestionJugador La instancia de Gestion que gestiona a los jugadores.
      */
