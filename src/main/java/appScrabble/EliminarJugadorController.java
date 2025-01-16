@@ -32,6 +32,8 @@ public class EliminarJugadorController {
 
         Gestion gestion = new Gestion();
         boolean eliminado = gestion.eliminarJugador(alias);
+        GestionListaJSON.leerJugadoresExistentes();
+        GestionListaJSON.guardarJugadores(gestion.jugadores);
 
         if (eliminado) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
