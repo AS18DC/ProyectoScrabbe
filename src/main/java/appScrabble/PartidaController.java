@@ -1,6 +1,7 @@
 package appScrabble;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
@@ -60,8 +61,8 @@ public class PartidaController {
 
     private Tablero tableroLogico;
     private Juego juego;
-    private String letraSeleccionada; // Declare the field here
-
+    private String letraSeleccionada;
+    private Saco saco;
 
     public void setJuego(Juego juego) {
         this.juego = juego;
@@ -70,9 +71,11 @@ public class PartidaController {
     }
 
     public void initialize() {
-        tableroLogico = new Tablero(new Saco());
+        saco = new Saco();
+        tableroLogico = new Tablero(saco);
         tableroLogico.colocarMultiplicadores();
     }
+
 
     void mostrarTablero() {
         tablero.getChildren().clear();
@@ -159,8 +162,28 @@ public class PartidaController {
 
     @FXML
     protected void onBolsaFichasClick() {
-        // Mostrar las fichas restantes en la bolsa
+        // Obtener el número total de letras en el saco
+        int totalLetras = saco.contarLetrasEnSaco();
+
+        // Crear un mensaje para mostrar las letras restantes
+        StringBuilder mensaje = new StringBuilder();
+        mensaje.append("Letras restantes en el saco:\n");
+
+        for (Letra letra : saco.getLetras()) {
+            mensaje.append("Letra: ").append(letra.letra)
+                    .append(", Cantidad: ").append(letra.cantidad)
+                    .append("\n");
+        }
+        mensaje.append("\nTotal de letras restantes: ").append(totalLetras);
+
+        // Mostrar el mensaje en la interfaz gráfica
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Letras en el Saco");
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje.toString());
+        alert.showAndWait();
     }
+
 
     @FXML
     protected void onPasarClick() {
