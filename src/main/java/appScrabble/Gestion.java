@@ -125,6 +125,15 @@ public class Gestion {
         return null;
     }
 
+    public boolean estaEnLista(String nombreJugador) {
+        // Lógica para consultar si el jugador está en la lista guardada
+        Gestion gestion = new Gestion();
+        Jugador jugador = gestion.consultarJugador(nombreJugador);
+
+        return jugador != null;
+    }
+
+
     /**
      * Edita el correo electrónico de un jugador.
      *
@@ -177,6 +186,25 @@ public class Gestion {
             throw new JugadorInvalido("Email inválido: " + correoElectronico);
         }
     }
+
+    /**
+     * Elimina un jugador basado en su alias.
+     *
+     * @param alias El alias del jugador a eliminar.
+     * @return true si el jugador fue eliminado con éxito, false si no se encontró el jugador.
+     */
+    public boolean eliminarJugador(String alias) {
+        for (Jugador jugador : jugadores) {
+            if (jugador.getNombre().equalsIgnoreCase(alias)) {
+                jugadores.remove(jugador);
+                System.out.println("Jugador con alias \"" + alias + "\" ha sido eliminado exitosamente.");
+                return true;
+            }
+        }
+        System.out.println("Jugador con alias \"" + alias + "\" no encontrado.");
+        return false;
+    }
+
 
     /**
      * Muestra el menú de registro de jugadores y gestiona las opciones seleccionadas.

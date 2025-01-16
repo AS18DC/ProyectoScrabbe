@@ -35,6 +35,10 @@
                             style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #377A4E; -fx-text-fill: #E0E2E1; -fx-background-radius: 10px;" />
                 </HBox>
                 <HBox alignment="CENTER">
+                    <Button text="Eliminar jugador" prefWidth="300" onAction="#onEliminarJugadorClick"
+                            style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #D72638; -fx-text-fill: #E0E2E1; -fx-background-radius: 10px;" />
+                </HBox>
+                <HBox alignment="CENTER">
                     <Button text="Salir" prefWidth="300" onAction="#onSalirClick"
                             style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #D72638; -fx-text-fill: #E0E2E1; -fx-background-radius: 10px;" />
                 </HBox>

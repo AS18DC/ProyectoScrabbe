@@ -87,6 +87,24 @@ public class MainGestionController {
     }
 
     @FXML
+    protected void onEliminarJugadorClick() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("eliminar-jugador-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 700, 500);
+
+            EliminarJugadorController eliminarJugadorController = fxmlLoader.getController();
+            eliminarJugadorController.setGestion(gestion);
+
+            Stage stage = new Stage();
+            stage.setTitle("Eliminar Jugador");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     protected void onMostrarEstadisticasClick() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("stats-jugador-view.fxml"));

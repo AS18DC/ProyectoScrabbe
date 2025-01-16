@@ -3,6 +3,7 @@ package appScrabble;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class RegistrarJugadorController {
 
@@ -58,6 +59,16 @@ public class RegistrarJugadorController {
     protected void onCancelarClick() {
         aliasField.clear();
         correoField.clear();
+    }
+
+    @FXML
+    protected void onSalirClick() {
+        Stage currentStage = (Stage) aliasField.getScene().getWindow();
+        if (currentStage != null) {
+            currentStage.close();
+        } else {
+            mostrarMensaje("Salir", "No se pudo cerrar la ventana.");
+        }
     }
 
     private void mostrarMensaje(String titulo, String contenido) {

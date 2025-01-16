@@ -1,21 +1,14 @@
 [
   {
-    "nombre": "marco",
-    "correoElectronico": "marco@gmail.com",
-    "puntaje": 0,
-    "puntajePartida": 0,
-    "letras": []
-  },
-  {
-    "nombre": "ali",
-    "correoElectronico": "ali@gmail.com",
-    "puntaje": 0,
-    "puntajePartida": 0,
-    "letras": []
-  },
-  {
     "nombre": "greto",
     "correoElectronico": "greto2@gmail.com",
+    "puntaje": 0,
+    "puntajePartida": 0,
+    "letras": []
+  },
+  {
+    "nombre": "Chochi",
+    "correoElectronico": "santidf@gmail.com",
     "puntaje": 0,
     "puntajePartida": 0,
     "letras": []
