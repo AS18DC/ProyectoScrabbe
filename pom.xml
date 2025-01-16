@@ -19,13 +19,14 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>20</version>
+            <version>23.0.1</version>  <!-- Usa la misma versión del API -->
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>20</version>
+            <version>23.0.1</version>
         </dependency>
+
 
         <!-- FormsFX -->
         <dependency>

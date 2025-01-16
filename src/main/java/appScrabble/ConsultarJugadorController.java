@@ -3,6 +3,7 @@ package appScrabble;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class ConsultarJugadorController {
 
@@ -33,6 +34,16 @@ public class ConsultarJugadorController {
 
         // Limpiar los campos de texto
         aliasField.clear();
+    }
+
+    @FXML
+    protected void onSalirClick() {
+        Stage currentStage = (Stage) aliasField.getScene().getWindow();
+        if (currentStage != null) {
+            currentStage.close();
+        } else {
+            mostrarMensaje("Salir", "No se pudo cerrar la ventana.");
+        }
     }
 
     @FXML

@@ -8,6 +8,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 public class StatsJugadorController {
 
@@ -77,6 +78,16 @@ public class StatsJugadorController {
     // Metodo para agregar una estadística a la tabla
     public void agregarEstadistica(String categoria, String valor) {
         datosEstadisticas.add(new Estadistica(categoria, valor));
+    }
+
+    @FXML
+    protected void onSalirClick() {
+        Stage currentStage = (Stage) aliasField.getScene().getWindow();
+        if (currentStage != null) {
+            currentStage.close();
+        } else {
+            mostrarMensaje("Salir", "No se pudo cerrar la ventana.");
+        }
     }
 
     // Clase interna para representar una estadística

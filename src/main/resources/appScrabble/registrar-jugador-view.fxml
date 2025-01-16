@@ -4,39 +4,35 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="appScrabble.RegistrarJugadorController"
-      alignment="CENTER" spacing="20" prefWidth="400" prefHeight="300"
-      style="-fx-background-color: rgba(143, 173, 50, 0.8); -fx-background-radius: 10px;">
+<VBox alignment="CENTER" prefHeight="300" prefWidth="400" spacing="20" style="-fx-background-color: rgba(143, 173, 50, 0.8); -fx-background-radius: 10px;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appScrabble.RegistrarJugadorController">
     <children>
         <!-- Título centrado -->
-        <Label text="Registrar Jugador"
-               style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #14241B;" />
+        <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #14241B;" text="Registrar Jugador" />
 
         <!-- Alias del jugador -->
         <HBox alignment="CENTER" spacing="10">
-            <Label text="Alias:"
-                   style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #14241B;" />
-            <TextField fx:id="aliasField" promptText="Ingrese el alias del jugador"
-                       style="-fx-background-color: #E0E2E1; -fx-text-fill: #14241B; -fx-background-radius: 5px;" />
+            <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #14241B;" text="Alias:" />
+            <TextField fx:id="aliasField" promptText="Ingrese el alias del jugador" style="-fx-background-color: #E0E2E1; -fx-text-fill: #14241B; -fx-background-radius: 5px;" />
         </HBox>
 
         <!-- Correo del jugador -->
         <HBox alignment="CENTER" spacing="10">
-            <Label text="Correo:"
-                   style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #14241B;" />
-            <TextField fx:id="correoField" promptText="Ingrese el correo del jugador"
-                       style="-fx-background-color: #E0E2E1; -fx-text-fill: #14241B; -fx-background-radius: 5px;" />
+            <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #14241B;" text="Correo:" />
+            <TextField fx:id="correoField" promptText="Ingrese el correo del jugador" style="-fx-background-color: #E0E2E1; -fx-text-fill: #14241B; -fx-background-radius: 5px;" />
         </HBox>
 
         <!-- Botones -->
         <HBox alignment="CENTER" spacing="20">
-            <Button text="Registrar" onAction="#onRegistrarClick"
-                    style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-background-color: #68A042; -fx-text-fill: #14241B; -fx-background-radius: 10px;" />
-            <Button text="Cancelar" onAction="#onCancelarClick"
-                    style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-background-color: #D72638; -fx-text-fill: #E0E2E1; -fx-background-radius: 10px;" />
+            <Button onAction="#onRegistrarClick" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-background-color: #68A042; -fx-text-fill: #14241B; -fx-background-radius: 10px;" text="Registrar" />
+            <Button onAction="#onCancelarClick" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-background-color: #D72638; -fx-text-fill: #E0E2E1; -fx-background-radius: 10px;" text="Vaciar" />
         </HBox>
+      <HBox alignment="CENTER" spacing="20">
+         <children>
+            <Button onAction="#onSalirClick" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-background-color: #ff0000; -fx-text-fill: #ffffff; -fx-background-radius: 10px;" text="Salir" textFill="WHITE" />
+         </children>
+      </HBox>
     </children>
     <padding>
-        <Insets top="20" right="20" bottom="20" left="20" />
+        <Insets bottom="20" left="20" right="20" top="20" />
     </padding>
 </VBox>
