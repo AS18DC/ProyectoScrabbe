@@ -46,8 +46,7 @@ public class MainJuegoController {
     @FXML
     protected void onSalirClick() {
         mostrarMensaje("Salir", "Cerrando la aplicación...");
-        // Aquí puedes cerrar la aplicación o realizar otras acciones necesarias.
-        System.exit(0); // Cerrar la aplicación
+        System.exit(0);
     }
 
     /**

@@ -1,8 +1,12 @@
 package appScrabble;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -46,7 +50,19 @@ public class LoginJugadorController {
         try {
             juego = new Juego(jugador1, jugador2, "src/main/resources/listado.txt");
             if (juego.iniciarPartida()) {
-                mostrarMensaje("Éxito", "La partida ha comenzado.");
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("partida-view.fxml"));
+                    Scene scene = new Scene(loader.load(), 700, 500);
+
+                    PartidaController controller = loader.getController();
+                    controller.setJuego(juego);
+
+                    Stage stage = (Stage) jugador1Field.getScene().getWindow();
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (IOException e) {
+                    mostrarMensaje("Error", "No se pudo cargar la vista de la partida: " + e.getMessage());
+                }
             } else {
                 mostrarMensaje("Error", "No se pudo iniciar la partida. Regresando al menú...");
             }

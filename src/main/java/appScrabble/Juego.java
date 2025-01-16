@@ -58,6 +58,14 @@ class Juego {
         this.contadorMovimientos = contadorMovimientos;
     }
 
+    public Jugador getJugador1() {
+        return jugador1;
+    }
+
+    public Jugador getJugador2() {
+        return jugador2;
+    }
+
     /**
      * Valida si un número está en el rango de 0 a 14.
      *

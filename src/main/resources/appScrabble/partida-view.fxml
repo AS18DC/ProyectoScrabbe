@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="appScrabble.PartidaController">
+    <!-- Sección superior -->
+    <HBox spacing="10" alignment="CENTER" fx:id="jugadoresBox">
+        <VBox fx:id="jugador1Info" style="-fx-border-color: black; -fx-padding: 10;">
+            <Label fx:id="nombreJugador1" text="Jugador 1" />
+            <Label fx:id="scoreJugador1" text="Puntos: 0" />
+        </VBox>
+        <VBox fx:id="jugador2Info" style="-fx-border-color: black; -fx-padding: 10;">
+            <Label fx:id="nombreJugador2" text="Jugador 2" />
+            <Label fx:id="scoreJugador2" text="Puntos: 0" />
+        </VBox>
+    </HBox>
+
+    <!-- Sección central -->
+    <GridPane fx:id="tablero">
+        <!-- Aquí van los elementos del tablero -->
+    </GridPane>
+
+    <!-- Sección inferior -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button fx:id="btnEstadisticas" text="Estadísticas" />
+        <Button fx:id="btnEnviar" text="ENVIAR" />
+        <Button fx:id="btnDeshacer" text="Deshacer" />
+        <Button fx:id="btnBolsaFichas" text="Bolsa de fichas" />
+        <Button fx:id="btnPasar" text="Pasar" />
+        <Button fx:id="btnCambiarFichas" text="Cambiar fichas" />
+    </HBox>
+</BorderPane>
