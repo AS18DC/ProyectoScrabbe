@@ -125,6 +125,15 @@ public class Gestion {
         return null;
     }
 
+    public boolean estaEnLista(String nombreJugador) {
+        // Lógica para consultar si el jugador está en la lista guardada
+        Gestion gestion = new Gestion();
+        Jugador jugador = gestion.consultarJugador(nombreJugador);
+
+        return jugador != null;
+    }
+
+
     /**
      * Edita el correo electrónico de un jugador.
      *
