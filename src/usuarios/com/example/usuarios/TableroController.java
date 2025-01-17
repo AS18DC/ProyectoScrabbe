@@ -386,5 +386,4 @@ public class TableroController {
         alert.setContentText(mensaje.toString());
         alert.showAndWait();
     }
-
 }
