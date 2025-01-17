@@ -17,11 +17,11 @@
     <!-- Sección superior: Información de los jugadores -->
     <top>
         <HBox alignment="CENTER" prefHeight="114.0" prefWidth="780.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-padding: 5;">
-            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="380.0" spacing="5" style="-fx-border-color: black; -fx-border-width: 3; -fx-padding: 5; -fx-min-width: 200;">
+            <VBox fx:id="jugador1Info" alignment="CENTER" prefHeight="100.0" prefWidth="380.0" spacing="5" style="-fx-border-color: black; -fx-border-width: 3; -fx-padding: 5; -fx-min-width: 200;">
                 <Label fx:id="nombreJugador1" style="-fx-font-size: 14;" text="Jugador 1" textAlignment="CENTER" />
                 <Label fx:id="scoreJugador1" style="-fx-font-size: 12;" text="Puntos: 0" />
             </VBox>
-            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="380.0" spacing="5" style="-fx-border-color: black; -fx-border-width: 2; -fx-padding: 5; -fx-min-width: 200;">
+            <VBox fx:id="jugador2Info" alignment="CENTER" prefHeight="100.0" prefWidth="380.0" spacing="5" style="-fx-border-color: black; -fx-border-width: 2; -fx-padding: 5; -fx-min-width: 200;">
                 <Label fx:id="nombreJugador2" style="-fx-font-size: 14;" text="Jugador 2" />
                 <Label fx:id="scoreJugador2" style="-fx-font-size: 12;" text="Puntos: 0" />
             </VBox>
@@ -438,8 +438,8 @@
             </HBox>
             <!-- Botones inferiores -->
             <HBox alignment="CENTER" prefHeight="80.0" prefWidth="757.0" spacing="10" style="-fx-padding: 5;">
-                <Button fx:id="btnPasar" minWidth="75.0" prefHeight="57.0" prefWidth="95.0" style="-fx-font-size: 12; -fx-min-width: 80;">
-               <graphic>
+                <Button fx:id="btnPasar" minWidth="75.0" prefHeight="57.0" prefWidth="95.0" style="-fx-font-size: 12; -fx-min-width: 80;" onAction="#onPasarClick">
+                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../icons/pass.png" />

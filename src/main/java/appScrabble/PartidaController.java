@@ -14,7 +14,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.text.TextFlow;
-
 import java.util.List;
 
 public class PartidaController {
@@ -69,6 +68,17 @@ public class PartidaController {
         this.juego = juego;
         actualizarVistaJugadores();
         actualizarLetrasJugador();
+        resaltarJugadorEnTurno(juego.esTurnoJugador1());
+    }
+
+    public void resaltarJugadorEnTurno(boolean esJugador1Turno) {
+        if (esJugador1Turno) {
+            jugador1Info.setStyle("-fx-background-color: #ebee90;");
+            jugador2Info.setStyle("");
+        } else {
+            jugador1Info.setStyle("");
+            jugador2Info.setStyle("-fx-background-color: #5f40d8;");
+        }
     }
 
     public void initialize() {
@@ -171,10 +181,6 @@ public class PartidaController {
         }
     }
 
-    public void resaltarJugadorEnTurno(boolean esJugador1Turno) {
-        jugador1Info.setStyle(esJugador1Turno ? "-fx-background-color: lightgreen;" : "");
-        jugador2Info.setStyle(esJugador1Turno ? "" : "-fx-background-color: lightgreen;");
-    }
 
     @FXML
     protected void onEnviarClick() {
