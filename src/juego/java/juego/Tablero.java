@@ -85,16 +85,16 @@ public class Tablero {
         String disp = "";
         System.out.print("   ");
         for (int i = 0; i < TAMANO; i++) {
-            System.out.printf(Main.FONDO_BLANCO + Main.TEXTO_NEGRO + "%3d " + Main.RESET, i);
+            System.out.print("%3d ");
         }
         System.out.println();
         for (int i = 0; i < TAMANO; i++) {
-            System.out.printf(Main.FONDO_BLANCO + Main.TEXTO_NEGRO + "%2d " + Main.RESET, i);
+            System.out.print("%2d ");
             for (int j = 0; j < TAMANO; j++) {
                 if (tablero[i][j] == null) {
                     disp = "   ";
                 } else {
-                    disp = Main.FONDO_VERDE + Main.TEXTO_NEGRO + " " + tablero[i][j].getSymbol() + " " + Main.RESET;
+                    disp = " " + tablero[i][j].getSymbol() + " ";
                 }
                 System.out.print("|" + disp);
             }
