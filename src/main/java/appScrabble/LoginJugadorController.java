@@ -70,7 +70,7 @@ public class LoginJugadorController {
                 if (juego.iniciarPartida()) {
                     try {
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("partida-view.fxml"));
-                        Scene scene = new Scene(loader.load(), 1000, 1000);
+                        Scene scene = new Scene(loader.load(), 750, 750);
 
                         PartidaController controller = loader.getController();
                         controller.setJuego(juego);

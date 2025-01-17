@@ -174,14 +174,23 @@ class Tablero {
                         return 0;
                     }
 
-                    int puntajeLetra = saco.obtenerPuntajeDeLaLetra(letraActual);
-                    if (casillaActual.contains("3XL")) puntajeLetra *= 3;
-                    else if (casillaActual.contains("2XL")) puntajeLetra *= 2;
-                    else if (casillaActual.contains("3XP")) multiplicadorPalabra *= 3;
-                    else if (casillaActual.contains("2XP")) multiplicadorPalabra *= 2;
+                    // Crear puntaje base para la letra actual
+                    int puntajeBase = saco.obtenerPuntajeDeLaLetra(letraActual);
+                    Puntaje puntajeLetra = new PuntajeBase(puntajeBase);
 
-                    tablero[fila][col + (i - 1)] = letraActual; // Colocar la letra o combinación en el tablero
-                    puntaje += puntajeLetra;
+                    // Aplicar decoradores según la casilla
+                    if (casillaActual.contains("3XL")) {
+                        puntajeLetra = new TripleLetraDecorator(puntajeLetra);
+                    } else if (casillaActual.contains("2XL")) {
+                        puntajeLetra = new DobleLetraDecorator(puntajeLetra);
+                    } else if (casillaActual.contains("3XP")) {
+                        puntajeLetra = new TriplePalabraDecorator(puntajeLetra);
+                    } else if (casillaActual.contains("2XP")) {
+                        puntajeLetra = new DoblePalabraDecorator(puntajeLetra);
+                    }
+
+                    tablero[fila][col + (i - 1)] = letraActual; // Colocar la letra en el tablero
+                    puntaje += puntajeLetra.calcularPuntaje(); // Sumar puntaje con decoradores
                     letrasUsadas.add(letraActual);
                 }
             } else { // Vertical
@@ -207,14 +216,23 @@ class Tablero {
                         return 0;
                     }
 
-                    int puntajeLetra = saco.obtenerPuntajeDeLaLetra(letraActual);
-                    if (casillaActual.contains("3XL")) puntajeLetra *= 3;
-                    else if (casillaActual.contains("2XL")) puntajeLetra *= 2;
-                    else if (casillaActual.contains("3XP")) multiplicadorPalabra *= 3;
-                    else if (casillaActual.contains("2XP")) multiplicadorPalabra *= 2;
+                    // Crear puntaje base para la letra actual
+                    int puntajeBase = saco.obtenerPuntajeDeLaLetra(letraActual);
+                    Puntaje puntajeLetra = new PuntajeBase(puntajeBase);
 
-                    tablero[fila + (i - 1)][col] = letraActual; // Colocar la letra o combinación en el tablero
-                    puntaje += puntajeLetra;
+                    // Aplicar decoradores según la casilla
+                    if (casillaActual.contains("3XL")) {
+                        puntajeLetra = new TripleLetraDecorator(puntajeLetra);
+                    } else if (casillaActual.contains("2XL")) {
+                        puntajeLetra = new DobleLetraDecorator(puntajeLetra);
+                    } else if (casillaActual.contains("3XP")) {
+                        puntajeLetra = new TriplePalabraDecorator(puntajeLetra);
+                    } else if (casillaActual.contains("2XP")) {
+                        puntajeLetra = new DoblePalabraDecorator(puntajeLetra);
+                    }
+
+                    tablero[fila + (i - 1)][col] = letraActual; // Colocar la letra en el tablero
+                    puntaje += puntajeLetra.calcularPuntaje(); // Sumar puntaje con decoradores
                     letrasUsadas.add(letraActual);
                 }
             }
@@ -225,6 +243,7 @@ class Tablero {
         puntaje *= multiplicadorPalabra; // Aplicar multiplicador de palabra
         return puntaje;
     }
+
 
 
 
