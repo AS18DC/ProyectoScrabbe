@@ -92,15 +92,12 @@ class Saco {
             boolean letraEncontrada = false;
             for (Letra letraSaco : letras) {
                 if (letraSaco.letra.equals(letra)) {
-                    letraSaco.cantidad++; // Incrementa la cantidad independientemente de su valor actual
+                    letraSaco.cantidad++;
                     letraEncontrada = true;
                     break;
                 }
             }
-
-            // Si la letra no se encontró, significa que probablemente ya no estaba en el saco
             if (!letraEncontrada) {
-                // Volver a agregar la letra al saco
                 letras.add(new Letra(letra, obtenerPuntajeDeLaLetra(letra), 1));
             }
         }
@@ -180,31 +177,24 @@ class Saco {
     public void repartirLetras(Jugador jugador, int cantidad) {
         Random rand = new Random();
         int letrasRepartidas = 0;
-
-        // Calcular cuántas letras realmente necesita para llegar a 7
         int letrasFaltantes = 7 - jugador.getLetras().size();
         cantidad = Math.min(cantidad, letrasFaltantes);
 
-        // Repartir letras hasta alcanzar la cantidad deseada o hasta que se agoten las letras
         while (letrasRepartidas < cantidad && !letras.isEmpty()) {
             int index = rand.nextInt(letras.size());
             Letra letra = letras.get(index);
 
-            // Verificar si hay letras disponibles
             if (letra.cantidad > 0) {
-                // Agregar la letra al jugador
                 jugador.agregarLetra(letra.letra, letra.puntaje);
                 letra.cantidad--;
                 letrasRepartidas++;
             }
 
-            // Si la letra se ha agotado, eliminarla de la lista
             if (letra.cantidad == 0) {
                 letras.remove(index);
             }
         }
 
-        // Mensaje si no se pudieron repartir todas las letras solicitadas
         if (letrasRepartidas < cantidad) {
             System.out.println("No hay suficientes letras disponibles en el saco para repartir " + cantidad + " letras.");
         }

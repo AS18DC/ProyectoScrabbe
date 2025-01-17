@@ -221,9 +221,13 @@ public class PartidaController {
     }
 
     @FXML
-    protected void onCambiarFichasClick() {
-        juego.cambiarFichasJugadorEnTurno();
+    public void onCambiarTodasLasFichasClick() {
+        Jugador jugadorActual = juego.getJugadorEnTurno();
+        saco.devolverLetrasAlSaco(jugadorActual);
+        saco.repartirLetras(jugadorActual, 7);
+        juego.pasarTurno();
         actualizarLetrasJugador();
+        resaltarJugadorEnTurno(juego.esTurnoJugador1());
     }
 
     @FXML

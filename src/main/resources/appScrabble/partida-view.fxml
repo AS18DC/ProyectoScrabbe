@@ -446,7 +446,7 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-                <Button fx:id="btnCambiarFichas" minWidth="75.0" prefHeight="57.0" prefWidth="95.0" style="-fx-font-size: 12; -fx-min-width: 80;">
+                <Button fx:id="btnCambiarFichas" minWidth="75.0" prefHeight="57.0" prefWidth="95.0" style="-fx-font-size: 12; -fx-min-width: 80;" onAction="#onCambiarTodasLasFichasClick">
                <graphic>
                   <ImageView fitHeight="47.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
                      <image>
