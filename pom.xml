@@ -7,7 +7,7 @@
     <groupId>com.example</groupId>
     <artifactId>proyecto_poo_interfaz</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>proyecto_poo_interfaz</name>
+    <name>proyecto_poo_interfaz1</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
