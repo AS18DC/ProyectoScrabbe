@@ -2,15 +2,13 @@ package com.example.usuarios;
 
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.control.Alert;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
-import javafx.scene.control.ButtonType;
+
 import java.util.Optional;
 import juego.*;
 import juego.Main;
@@ -23,6 +21,18 @@ import java.util.regex.Pattern;
 public class TableroController {
     private Partida partida;
     private int pass;
+
+    @FXML
+    private Label jugador1;
+
+    @FXML
+    private Label jugador2;
+
+    @FXML
+    private Label scoreJugador1;
+
+    @FXML
+    private Label scoreJugador2;
 
     @FXML
     private HBox playerTiles; // HBox para las fichas del jugador
@@ -58,12 +68,30 @@ public class TableroController {
 
     public void setPartida(Jugador jugador1, Jugador jugador2){
       this.partida = new Partida(jugador1, jugador2);
+      this.jugador1.setText("turno de: " + jugador1.getAlias());
+      this.jugador2.setText(jugador2.getAlias());
       this.pass =0;
       iniciarPartida();
     }
 
+    public void setTurno(){
+        if (partida.getActualTurn() == 1){
+            this.jugador1.setText("turno de: " + partida.getJugador1().getAlias());
+            this.jugador2.setText(partida.getJugador2().getAlias());
+
+        }else {
+            this.jugador2.setText("turno de: " + partida.getJugador2().getAlias());
+            this.jugador1.setText(partida.getJugador1().getAlias());
+        }
+
+        this.scoreJugador1.setText("score: " + partida.getJugador1().getScore());
+        this.scoreJugador2.setText("score: " + partida.getJugador2().getScore());
+
+    }
+
     public void iniciarPartida() {
         if (partida.getActualTurn() == 1){
+            setTurno();
             FichasJugador fichas1 = partida.getJugador1().getPlayerCharacters();
             while(fichas1.existeComodin()){
                 String nuevaFicha = showAlertComodin("FELICIDADES", "Te has encontrado un comodin, intercambialo por una letra");
@@ -79,6 +107,7 @@ public class TableroController {
             }
             mostrarFichas(partida.getJugador1());
         }else {
+            setTurno();
             FichasJugador fichas2 = partida.getJugador2().getPlayerCharacters();
             while(fichas2.existeComodin()){
                 String nuevaFicha2 = showAlertComodin("FELICIDADES", "Te has encontrado un comodin, intercambialo por una letra");
@@ -266,6 +295,7 @@ public class TableroController {
         partida.getTablero().mostrarTablero();
         System.out.println(palabra);
         partida.alternarTurno();
+        setTurno();
         columna = null;
         fila = null;
         if (partida.getActualTurn() == 1){
@@ -407,4 +437,5 @@ public class TableroController {
         }
         else return (letra.equals("RR") | letra.equals("CH") | letra.equals("LL"));
     }
+
 }
