@@ -46,7 +46,7 @@ public class InicioDeSesionController {
 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/interfazUsuario/MenuDePartida.fxml"));
             Parent root = fxmlLoader.load();
-            MenuDePartidaController menuDePartidaController= fxmlLoader.getController();
+            MenuDePartidaController menuDePartidaController = fxmlLoader.getController();
             menuDePartidaController.setContext(jugador1,jugador2);
             Stage newStage = new Stage();
             newStage.setTitle("Menú Partida");

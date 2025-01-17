@@ -23,8 +23,6 @@ public class Partida {
     private long initialTime;
     private long time;
     private int winner;
-    private int consecutivePasses = 0;
-
 
     /**
      * Constructor por defecto de la clase juego.Partida.
@@ -87,10 +85,6 @@ public class Partida {
         return tablero;
     }
 
-    public int getConsecutivePasses() {
-        return consecutivePasses;
-    }
-
     public void setTablero(Tablero tablero) {
         this.tablero = tablero;
     }
@@ -120,7 +114,6 @@ public class Partida {
         } else {
             actualTurn = 1;
         }
-        consecutivePasses++;
     }
 
     /**
@@ -251,11 +244,12 @@ public class Partida {
      * @return true si el cambio fue exitoso, false en caso contrario.
      */
     public boolean cambiarFichasDeJugador(Jugador jugador) {
-        System.out.println("Fichas del jugador:" + jugador.getAlias());
-        jugador.printCharacters();
-        System.out.println("Indique las fichas a cambiar:");
-        String fichasACambiar = Main.read.next();
-        ArrayList<Character> fichasJ = jugador.getPlayerCharacters().getFichas();
+        String fichasACambiar = "";
+
+        for (Character fichas : jugador.getPlayerCharacters().getFichas()){
+            fichasACambiar = fichasACambiar + "," + fichas;
+        }
+
         FichasJugador fichasJugador = jugador.getPlayerCharacters();
         return fichasJugador.reemplazarFichas(fichasACambiar, bag);
     }
