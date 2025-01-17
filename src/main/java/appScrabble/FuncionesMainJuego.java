@@ -38,21 +38,21 @@ public class FuncionesMainJuego {
      *
      * @param scanner El escáner para leer la entrada del usuario.
      */
-    private static void continuarPartida(Scanner scanner) {
-        System.out.print("Ingrese el alias de la partida que desea reanudar: ");
-        String alias = scanner.next(); // Leer el alias de la partida
-
-        try {
-            // Inicializar juego y diccionario
-            String rutaDiccionario = "src/listado-general-sin-acentos.txt";
-            juego = new Juego(new Diccionario(rutaDiccionario));
-            juego.cargarPartida(alias);
-            partidaIniciada = true;
-            juego.reanudarPartida();
-            System.out.println("Partida reanudada con éxito.");
-        } catch (IOException e) {
-            System.out.println("Error al cargar la partida: " + e.getMessage());
-            System.out.println("No hay ninguna partida guardada con el alias '" + alias + "'.");
-        }
-    }
+//    private static void continuarPartida(Scanner scanner) {
+//        System.out.print("Ingrese el alias de la partida que desea reanudar: ");
+//        String alias = scanner.next(); // Leer el alias de la partida
+//
+//        try {
+//            // Inicializar juego y diccionario
+//            String rutaDiccionario = "src/listado-general-sin-acentos.txt";
+//            juego = new Juego(new Diccionario(rutaDiccionario));
+//            juego.cargarPartida(alias);
+//            partidaIniciada = true;
+//            juego.reanudarPartida();
+//            System.out.println("Partida reanudada con éxito.");
+//        } catch (IOException e) {
+//            System.out.println("Error al cargar la partida: " + e.getMessage());
+//            System.out.println("No hay ninguna partida guardada con el alias '" + alias + "'.");
+//        }
+//    }
 }

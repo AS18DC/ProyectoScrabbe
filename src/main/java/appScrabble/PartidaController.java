@@ -190,6 +190,7 @@ public class PartidaController {
     @FXML
     protected void onDeshacerClick() {
         // Lógica para deshacer movimientos
+
     }
 
     @FXML
@@ -218,6 +219,9 @@ public class PartidaController {
         juego.pasarTurno();
         resaltarJugadorEnTurno(juego.esTurnoJugador1());
         actualizarLetrasJugador();
+        if (juego.getConsecutivePasses() >= 4) {
+            juego.finalizarPartida(tablero);
+        }
     }
 
     @FXML
