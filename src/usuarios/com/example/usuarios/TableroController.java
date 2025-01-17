@@ -407,5 +407,4 @@ public class TableroController {
         }
         else return (letra.equals("RR") | letra.equals("CH") | letra.equals("LL"));
     }
-
 }
