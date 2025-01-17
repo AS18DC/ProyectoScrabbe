@@ -1,4 +1,4 @@
-package juego;
+package com.example.usuarios;
 
 public abstract class MultiplicadorDecorator implements Puntaje {
     protected Puntaje puntajeDecorado;

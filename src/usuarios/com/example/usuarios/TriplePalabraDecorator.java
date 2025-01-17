@@ -1,4 +1,4 @@
-package juego;
+package com.example.usuarios;
 
 public class TriplePalabraDecorator extends MultiplicadorDecorator {
     public TriplePalabraDecorator(Puntaje puntajeDecorado) {

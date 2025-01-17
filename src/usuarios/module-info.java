@@ -6,8 +6,8 @@ module proyecto.poo.interfaz {
     requires javafx.controls;
     requires javafx.fxml;
     requires com.dlsc.formsfx;
-    opens com.example.usuarios to javafx.fxml;
     opens juego to com.fasterxml.jackson.databind;
     exports com.example.usuarios;
     exports juego;
+    opens com.example.usuarios to com.fasterxml.jackson.databind, javafx.fxml;
 }

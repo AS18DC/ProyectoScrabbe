@@ -1,4 +1,4 @@
-package juego;
+package com.example.usuarios;
 
 public class PuntajeBase implements Puntaje {
     private int puntaje;
