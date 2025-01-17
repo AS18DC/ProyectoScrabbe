@@ -15,20 +15,36 @@ public class MenuDePartidaController {
     private Jugador jugador1;
     private Jugador jugador2;
 
-    public void setContext(Jugador jugador1,Jugador jugador2){
-        this.jugador1=jugador1;
-        this.jugador2=jugador2;
+    public void setContext(Jugador jugador1, Jugador jugador2) {
+        this.jugador1 = jugador1;
+        this.jugador2 = jugador2;
     }
 
-
     @FXML
-    protected void onButtonNuevoJuego(){}
-    @FXML
-    protected void onButtonContinuarJuego(){}
-    @FXML
-    protected void onButtonEstadisticas(ActionEvent event){
+    protected void onButtonNuevoJuego(ActionEvent event) {
         try {
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.close();
 
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/interfazUsuario/Tablero.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Juego");
+            stage.setScene(new Scene(root, 600, 800));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    protected void onButtonContinuarJuego() {
+        // Implementar lógica para continuar juego
+    }
+
+    @FXML
+    protected void onButtonEstadisticas(ActionEvent event) {
+        try {
             Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             currentStage.close();
 
@@ -42,9 +58,9 @@ public class MenuDePartidaController {
             e.printStackTrace();
         }
     }
+
     @FXML
-    protected void onButtonRegresar(){
+    protected void onButtonRegresar() {
         System.exit(0);
     }
-
 }
