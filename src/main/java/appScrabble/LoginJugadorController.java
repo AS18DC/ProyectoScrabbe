@@ -126,12 +126,23 @@ public class LoginJugadorController {
             juego.saco.repartirLetras(jugador1, 1);
             juego.saco.repartirLetras(jugador2, 1);
 
-            turnoJugador1 = juego.saco.letraMasCercanaA(jugador1.getLetras(), jugador2.getLetras());
+            boolean turnoJugador1 = juego.saco.letraMasCercanaA(jugador1.getLetras(), jugador2.getLetras());
 
             jugador1Letra.setText(jugador1.getLetras().get(0).toString());
             jugador2Letra.setText(jugador2.getLetras().get(0).toString());
 
-            turnoJugador.setText(turnoJugador1 ? jugador1.getNombre() : jugador2.getNombre());
+            // Si el ganador no es el jugador 1, intercambiamos los jugadores
+            if (!turnoJugador1) {
+                Jugador temp = jugador1;
+                jugador1 = jugador2;
+                jugador2 = temp;
+
+                // También actualizamos los campos visibles
+                jugador1Field.setText(jugador1.getNombre());
+                jugador2Field.setText(jugador2.getNombre());
+            }
+
+            turnoJugador.setText(jugador1.getNombre()); // El ganador ahora es jugador 1
 
             juego.saco.devolverLetrasAlSaco(jugador1);
             juego.saco.devolverLetrasAlSaco(jugador2);
@@ -139,6 +150,7 @@ public class LoginJugadorController {
             mostrarMensaje("Error", "Uno o ambos jugadores no están en la lista.");
         }
     }
+
 
     private void mostrarMensaje(String titulo, String contenido) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
