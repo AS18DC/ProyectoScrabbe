@@ -18,7 +18,6 @@ public class MainJuegoApplication extends Application {
         Jugador jugador1 = new Jugador(" "," ");
         Jugador jugador2 = new Jugador(" "," ");
         String filePath = "src/main/resources/listado.txt";
-        System.out.println("el pepe");
 
         juego = new Juego(jugador1, jugador2, filePath);
 
