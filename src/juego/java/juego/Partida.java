@@ -23,6 +23,8 @@ public class Partida {
     private long initialTime;
     private long time;
     private int winner;
+    private int consecutivePasses = 0;
+
 
     /**
      * Constructor por defecto de la clase juego.Partida.
@@ -85,6 +87,10 @@ public class Partida {
         return tablero;
     }
 
+    public int getConsecutivePasses() {
+        return consecutivePasses;
+    }
+
     public void setTablero(Tablero tablero) {
         this.tablero = tablero;
     }
@@ -114,6 +120,7 @@ public class Partida {
         } else {
             actualTurn = 1;
         }
+        consecutivePasses++;
     }
 
     /**

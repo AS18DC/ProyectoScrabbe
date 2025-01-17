@@ -278,11 +278,9 @@ public class TableroController {
 
     private void onPassClick() {
         partida.alternarTurno();
-        pass += 1;
-        if (pass == 4) {
+        if (partida.getConsecutivePasses() >= 4) {
             partida.chooseWinner();
         }
-
         if (partida.getActualTurn() == 1) {
             mostrarFichas(partida.getJugador1());
         } else {
