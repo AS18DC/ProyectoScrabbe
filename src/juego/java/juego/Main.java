@@ -24,18 +24,6 @@ public class Main {
      */
     public static boolean validInput = false;
 
-    // Constantes de estilo de texto y color para la consola
-    public static String RESET = "\u001B[0m";
-    public static String TEXTO_ROJO = "\u001B[31m";
-    public static String TEXTO_VERDE = "\u001B[32m";
-    public static String TEXTO_AZUL = "\u001B[34m";
-    public static String TEXTO_NEGRO = "\u001B[30m";
-
-    public static String FONDO_BLANCO = "\u001B[107m";
-    public static String FONDO_VERDE = "\u001B[102m";
-    public static String FONDO_AMARILLO = "\u001B[103m";
-    public static String FONDO_CYAN = "\u001B[106m";
-
     /**
      * Inicia el proceso de inicio de sesión o registro de un jugador.
      * Permite al jugador iniciar sesión si ya tiene una cuenta, o registrarse si es un nuevo jugador.
@@ -46,8 +34,8 @@ public class Main {
         String alias = "";
         String email = "";
         Authentication auth = new Authentication();
-        System.out.println(TEXTO_AZUL + "\n Ingrese la opcion que quiere elegir: " + RESET);
-        System.out.println(TEXTO_AZUL + " 1. Iniciar sesión \n 2. Registrarse \n\n 0. Salir" + RESET);
+        System.out.println("\n Ingrese la opcion que quiere elegir: ");
+        System.out.println(" 1. Iniciar sesión \n 2. Registrarse \n\n 0. Salir");
         int opc = read.nextInt();
 
         while (opc != 0) {
@@ -57,7 +45,7 @@ public class Main {
 
                 // Validar el correo electrónico
                 while (!auth.validateEmail(email)) {
-                    System.out.println(TEXTO_ROJO + "Correo inválido, por favor ingrese otro" + RESET);
+                    System.out.println("Correo inválido, por favor ingrese otro");
                     email = read.next();
                 }
 
@@ -108,11 +96,11 @@ public class Main {
      * Muestra el menú principal del juego con las opciones disponibles para los jugadores.
      */
     public static void menu() {
-        System.out.println("\n" + FONDO_CYAN + TEXTO_NEGRO + "¿Qué les gustaría hacer?" + RESET);
-        System.out.println(FONDO_CYAN + TEXTO_NEGRO + "1. Iniciar una partida" + RESET);
-        System.out.println(FONDO_CYAN + TEXTO_NEGRO + "2. Continuar partida anterior" + RESET);
-        System.out.println(FONDO_CYAN + TEXTO_NEGRO + "3. Ver estadísticas de los jugadores" + RESET);
-        System.out.println(FONDO_CYAN + TEXTO_NEGRO + "0. Salir" + RESET);
+        System.out.println("\n¿Qué les gustaría hacer?");
+        System.out.println( "1. Iniciar una partida");
+        System.out.println( "2. Continuar partida anterior");
+        System.out.println("3. Ver estadísticas de los jugadores");
+        System.out.println("0. Salir");
     }
 
     /**
@@ -123,11 +111,11 @@ public class Main {
      * @param args Argumentos de línea de comandos (no utilizados en este caso).
      */
     public static void main(String[] args) {
-        System.out.println(FONDO_VERDE + TEXTO_NEGRO + "****************************************" + RESET);
-        System.out.println(FONDO_VERDE + TEXTO_NEGRO + "*********** Inicio del juego *************" + RESET);
-        System.out.println(FONDO_VERDE + TEXTO_NEGRO + "*************** juego.Jugador 1 ****************" + RESET);
+        System.out.println("****************************************");
+        System.out.println("*********** Inicio del juego *************");
+        System.out.println("*************** juego.Jugador 1 ****************");
         Jugador jugador1 = inicio();
-        System.out.println(FONDO_VERDE + TEXTO_NEGRO + "*************** juego.Jugador 2 ****************" + RESET);
+        System.out.println("*************** juego.Jugador 2 ****************");
         Jugador jugador2 = inicio();
 
         menu();
@@ -152,9 +140,9 @@ public class Main {
             } else if (opc == 3) {
                 Estadisticas estadisticas = new Estadisticas();
                 if ((jugador1 != null) && (jugador2 != null)) {
-                    System.out.println(FONDO_VERDE + TEXTO_NEGRO + "*************** juego.Jugador 1 ****************");
+                    System.out.println("*************** juego.Jugador 1 ****************");
                     estadisticas.estad(jugador1.getAlias());
-                    System.out.println(FONDO_AMARILLO + TEXTO_NEGRO + "*************** juego.Jugador 2 ****************");
+                    System.out.println("*************** juego.Jugador 2 ****************");
                     estadisticas.estad(jugador2.getAlias());
                 }
                 menu();
