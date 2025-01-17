@@ -21,7 +21,7 @@ public class Partida {
     private Tablero tablero;
     private int actualTurn;
     private long initialTime;
-    private long time;
+    private int time;
     private int winner;
 
     /**
@@ -91,15 +91,25 @@ public class Partida {
 
 
     public int getTime() {
-        return (int) time;
+        return time;
     }
 
     public int getWinner() {
         return winner;
     }
 
+    public void setWinner(int winner) {
+        this.winner = winner;
+    }
+
     public void ubicarPalabra(String word, int fila, int columna, boolean horizontal, Jugador jugador){
+        int puntos = jugador.getScore();
         this.tablero.ubicarPalabra(word.toUpperCase(), fila, columna, horizontal, jugador);
+        if (actualTurn ==1){
+            this.score1 = jugador.getScore() - puntos;
+        }else {
+            this.score2 = jugador.getScore() - puntos;
+        }
         reponerFichas(jugador);
         manejadorDeArchivos.salvarPartida(this);
     }
@@ -110,6 +120,7 @@ public class Partida {
      */
     public void alternarTurno() {
         if (actualTurn == 1) {
+
             actualTurn = 2;
         } else {
             actualTurn = 1;
@@ -321,7 +332,7 @@ public class Partida {
      */
     public void finishGame() {
         long finishtime = System.currentTimeMillis();
-        this.time += (finishtime - this.initialTime)/1000;
+        this.time += (int) ((finishtime - this.initialTime)/10000);
     }
 
     /**
@@ -342,9 +353,5 @@ public class Partida {
             }
         }
         return false;
-    }
-
-    public void setWinner(int i) {
-
     }
 }

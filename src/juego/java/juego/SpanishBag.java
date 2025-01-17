@@ -115,7 +115,7 @@ public class SpanishBag implements CharactersBag {
      */
     private void addAll() {
         add("A", 1, 12);
-        add("B", 4, 2);
+        add("B", 4, 4);
         add("C", 3, 4);
         add("CH", 8, 1);
         add("D", 3, 5);
@@ -142,7 +142,6 @@ public class SpanishBag implements CharactersBag {
         add("X", 10, 1);
         add("Y", 5, 1);
         add("Z", 10, 1);
-        add("+", 0, 2);
     }
 
     /**

@@ -18,6 +18,7 @@ import java.util.Optional;
 
 import javafx.stage.Stage;
 import juego.*;
+import juego.Character;
 import juego.Main;
 import juego.Tablero;
 
@@ -72,6 +73,32 @@ public class TableroController {
     // Mapa para rastrear qué botón del HBox corresponde a cada letra colocada
     private Map<String, Button> usedTilesMap = new HashMap<>();
 
+    public void continuarPartida(Partida partida){
+        this.partida = partida;
+        Tablero tablero = partida.getTablero();
+        rellenarGridpane(tablero);
+        setTurno();
+        this.pass =0;
+        iniciarPartida();
+    }
+
+    public void rellenarGridpane(Tablero tablero){
+        Character[][] tab = tablero.getTablero();
+        for (int row = 0; row < 15; row++) {
+            for (int col = 0; col < 15; col++) {
+                if(tab[row][col] != null){
+                    for (Node node : board.getChildren()) {
+                        if (node instanceof Button button) {
+                            if ((GridPane.getRowIndex(button) == row) && (GridPane.getColumnIndex(button) == col)){
+                                button.setText(tab[row][col].getSymbol());
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
 
     public void setPartida(Jugador jugador1, Jugador jugador2){
       this.partida = new Partida(jugador1, jugador2);
@@ -331,6 +358,7 @@ public class TableroController {
 
         }
         partida.alternarTurno();
+        setTurno();
         if (partida.getActualTurn() == 1){
             mostrarFichas(partida.getJugador1());
         }else {
