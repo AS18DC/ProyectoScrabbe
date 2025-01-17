@@ -90,8 +90,8 @@ public class Partida {
     }
 
 
-    public long getTime() {
-        return time;
+    public int getTime() {
+        return (int) time;
     }
 
     public int getWinner() {
@@ -342,5 +342,9 @@ public class Partida {
             }
         }
         return false;
+    }
+
+    public void setWinner(int i) {
+
     }
 }

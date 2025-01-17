@@ -19,16 +19,6 @@ public class MainUsuarios {
     public static Scanner read = new Scanner(System.in);
     public static boolean validInput = false;
 
-    public static String RESET = "\u001B[0m";
-    public static String TEXTO_ROJO = "\u001B[31m";
-    public static String TEXTO_VERDE = "\u001B[32m";
-    public static String TEXTO_AZUL = "\u001B[34m";
-    public static String TEXTO_NEGRO = "\u001B[30m";
-
-    public static String FONDO_BLANCO= "\u001B[107m";
-    public static String FONDO_VERDE = "\u001B[102m";
-    public static String FONDO_AMARILLO = "\u001B[103m";
-    public static String FONDO_CYAN = "\u001B[106m";
 
     /**
      * Muestra una lista de todos los usuarios registrados en el sistema.
@@ -87,7 +77,7 @@ public class MainUsuarios {
         }
 
         if (!usuarioEncontrado) {
-            System.out.println(TEXTO_ROJO + "Usuario no encontrado." + RESET);
+            System.out.println("Usuario no encontrado.");
             return;
         }
 
@@ -110,7 +100,7 @@ public class MainUsuarios {
             Authentication auth = new Authentication();
             // Validar el nuevo correo electrónico
             while (!auth.validateEmail(nuevoEmail)) {
-                System.out.println(TEXTO_ROJO + "Correo inválido, por favor ingrese otro" + RESET);
+                System.out.println("Correo inválido, por favor ingrese otro");
                 nuevoEmail = read.next();
             }
             jugadorAModificar.setEmail(nuevoEmail);
@@ -118,7 +108,7 @@ public class MainUsuarios {
 
         // Guardar los cambios en el archivo
         manejadorDeArchivos.salvarJugador(jugadorAModificar);
-        System.out.println(TEXTO_VERDE + "Usuario modificado exitosamente." + RESET);
+        System.out.println("Usuario modificado exitosamente.");
     }
 
     /**
@@ -129,13 +119,13 @@ public class MainUsuarios {
         String alias = "";
         String email = "";
         Authentication auth = new Authentication();
-        System.out.println(TEXTO_AZUL + "\nIngrese la opción que quiere elegir: " + RESET);
+        System.out.println("\nIngrese la opción que quiere elegir: ");
         int opc = read.nextInt();
         System.out.println("Ingresa el correo electrónico");
         email = read.next();
         // Validar el correo electrónico
         while (!auth.validateEmail(email)) {
-            System.out.println(TEXTO_ROJO + "Correo inválido, por favor ingrese otro" + RESET);
+            System.out.println("Correo inválido, por favor ingrese otro");
             email = read.next();
         }
         System.out.println("Ingresa el alias del jugador");
@@ -174,12 +164,12 @@ public class MainUsuarios {
      * Permite al usuario seleccionar diferentes opciones de gestión.
      */
     public static void menu() {
-        System.out.println("\n" + FONDO_CYAN + TEXTO_NEGRO + "¿Qué le gustaría hacer?" + RESET);
-        System.out.println(FONDO_CYAN + TEXTO_NEGRO + "1. Ver todos los usuarios" + RESET);
-        System.out.println(FONDO_CYAN + TEXTO_NEGRO + "2. Registrar usuario" + RESET);
-        System.out.println(FONDO_CYAN + TEXTO_NEGRO + "3. Eliminar usuario" + RESET);
-        System.out.println(FONDO_CYAN + TEXTO_NEGRO + "4. Modificar usuario" + RESET);
-        System.out.println(FONDO_CYAN + TEXTO_NEGRO + "0. Salir" + RESET);
+        System.out.println("\n¿Qué le gustaría hacer?");
+        System.out.println("1. Ver todos los usuarios");
+        System.out.println("2. Registrar usuario");
+        System.out.println("3. Eliminar usuario");
+        System.out.println("4. Modificar usuario");
+        System.out.println("0. Salir");
     }
 
     /**
@@ -209,8 +199,8 @@ public class MainUsuarios {
      * @param args Argumentos de línea de comandos (no utilizados en este caso).
      */
     public static void main(String[] args) {
-        System.out.println(FONDO_VERDE + TEXTO_NEGRO + "****************************************" + RESET);
-        System.out.println(FONDO_VERDE + TEXTO_NEGRO + "*********** Gestión de Usuarios *************" + RESET);
+        System.out.println("****************************************");
+        System.out.println("*********** Gestión de Usuarios *************");
         menu();
         int opc = leerNumero();
         while (opc != 0) {

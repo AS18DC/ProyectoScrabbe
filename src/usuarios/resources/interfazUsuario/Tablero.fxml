@@ -355,8 +355,8 @@
 
             <!-- Botones de acciones principales -->
             <HBox alignment="CENTER" spacing="20" style="-fx-padding: 10;">
-                <Button fx:id="passButton" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-background-color: #e0f7fa; -fx-text-fill: #00796b; -fx-border-color: #b2dfdb; -fx-border-radius: 5;" text="Pasar" />
-                <Button fx:id="changeButton" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-background-color: #fff9c4; -fx-text-fill: #f57f17; -fx-border-color: #ffe082; -fx-border-radius: 5;" text="Cambiar todas las fichas" />
+                <Button fx:id="passButton" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-background-color: #e0f7fa; -fx-text-fill: #00796b; -fx-border-color: #b2dfdb; -fx-border-radius: 5;" text="Pasar Turno" />
+                <Button fx:id="changeButton" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-background-color: #fff9c4; -fx-text-fill: #f57f17; -fx-border-color: #ffe082; -fx-border-radius: 5;" text="Cambiar fichas" />
                 <Button fx:id="sendButton" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #c8e6c9; -fx-text-fill: #388e3c; -fx-border-color: #a5d6a7; -fx-border-radius: 5;" text="ENVIAR" />
                 <Button fx:id="bagButton" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-background-color: #ffcdd2; -fx-text-fill: #c62828; -fx-border-color: #ef9a9a; -fx-border-radius: 5;" text="Bolsa de fichas" />
                 <Button fx:id="statsButton" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-background-color: #d1c4e9; -fx-text-fill: #673ab7; -fx-border-color: #b39ddb; -fx-border-radius: 5;" text="Estadísticas" />

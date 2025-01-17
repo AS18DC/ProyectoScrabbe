@@ -1,7 +1,11 @@
 package com.example.usuarios;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -9,7 +13,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.VBox;
 
+import java.io.IOException;
 import java.util.Optional;
+
+import javafx.stage.Stage;
 import juego.*;
 import juego.Main;
 import juego.Tablero;
@@ -78,20 +85,6 @@ public class TableroController {
         if (partida.getActualTurn() == 1){
             this.jugador1.setText("turno de: " + partida.getJugador1().getAlias());
             this.jugador2.setText(partida.getJugador2().getAlias());
-
-        }else {
-            this.jugador2.setText("turno de: " + partida.getJugador2().getAlias());
-            this.jugador1.setText(partida.getJugador1().getAlias());
-        }
-
-        this.scoreJugador1.setText("score: " + partida.getJugador1().getScore());
-        this.scoreJugador2.setText("score: " + partida.getJugador2().getScore());
-
-    }
-
-    public void iniciarPartida() {
-        if (partida.getActualTurn() == 1){
-            setTurno();
             FichasJugador fichas1 = partida.getJugador1().getPlayerCharacters();
             while(fichas1.existeComodin()){
                 String nuevaFicha = showAlertComodin("FELICIDADES", "Te has encontrado un comodin, intercambialo por una letra");
@@ -102,12 +95,12 @@ public class TableroController {
                     nuevaFicha = nuevaFicha.toUpperCase();
                 }
                 partida.getJugador1().getPlayerCharacters().setComodin(nuevaFicha);
-
                 fichas1 = partida.getJugador1().getPlayerCharacters();
             }
-            mostrarFichas(partida.getJugador1());
+
         }else {
-            setTurno();
+            this.jugador2.setText("turno de: " + partida.getJugador2().getAlias());
+            this.jugador1.setText(partida.getJugador1().getAlias());
             FichasJugador fichas2 = partida.getJugador2().getPlayerCharacters();
             while(fichas2.existeComodin()){
                 String nuevaFicha2 = showAlertComodin("FELICIDADES", "Te has encontrado un comodin, intercambialo por una letra");
@@ -121,6 +114,18 @@ public class TableroController {
 
                 fichas2 = partida.getJugador2().getPlayerCharacters();
             }
+        }
+
+        this.scoreJugador1.setText("score: " + partida.getJugador1().getScore());
+        this.scoreJugador2.setText("score: " + partida.getJugador2().getScore());
+    }
+
+    public void iniciarPartida() {
+        if (partida.getActualTurn() == 1){
+            setTurno();
+            mostrarFichas(partida.getJugador1());
+        }else {
+            setTurno();
             mostrarFichas(partida.getJugador2());
         }
 
@@ -287,9 +292,11 @@ public class TableroController {
 
         if (partida.getActualTurn() == 1){
             partida.ubicarPalabra(palabra, fila, columna, horizontal, partida.getJugador1());
+            partida.finishGame();
             pass =0;
         } else {
             partida.ubicarPalabra(palabra, fila, columna, horizontal, partida.getJugador2());
+            partida.finishGame();
             pass =0;
         }
         partida.getTablero().mostrarTablero();
@@ -312,12 +319,18 @@ public class TableroController {
     }
 
     private void onPassClick(){
-        partida.alternarTurno();
         pass +=1;
         if(pass == 4){
-            partida.chooseWinner();
-        }
+            if (partida.getScore1() > partida.getScore2()){
+                partida.setWinner(1);
+                showWinner(partida.getJugador1().getAlias(), partida.getScore1(), partida.getScore2(), partida.getJugador1().getPalabrasJugadas(), partida.getJugador2().getPalabrasJugadas(), partida.getTime());
+            }else {
+                partida.setWinner(2);
+                showWinner(partida.getJugador2().getAlias(), partida.getScore1(), partida.getScore2(), partida.getJugador1().getPalabrasJugadas(), partida.getJugador2().getPalabrasJugadas(), partida.getTime());
+            }
 
+        }
+        partida.alternarTurno();
         if (partida.getActualTurn() == 1){
             mostrarFichas(partida.getJugador1());
         }else {
@@ -351,8 +364,8 @@ public class TableroController {
             partida.cambiarFichasDeJugador(partida.getJugador2());
             partida.alternarTurno();
             mostrarFichas(partida.getJugador1());
-
         }
+        setTurno();
     }
 
     private void mostrarFichas(Jugador jugador){
@@ -402,6 +415,24 @@ public class TableroController {
         alert.showAndWait();
     }
 
+    public void showWinner(String nombre, int puntos1, int puntos2, int palabras1, int palabras2, int tiempo){
+        try {
+            Stage estado = (Stage) jugador1.getScene().getWindow();
+            estado.close();
+
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/interfazUsuario/Ganador.fxml"));
+            Parent root = fxmlLoader.load();
+            GanadorContoller ganadorContoller = fxmlLoader.getController();
+            ganadorContoller.setContext(nombre, puntos1, puntos2, palabras1, palabras2, tiempo);
+            Stage stage = new Stage();
+            stage.setTitle("FELICIDADES");
+            stage.setScene(new Scene(root, 600, 800));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private String showAlertComodin(String title, String message) {
         // Crear una nueva alerta
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -428,6 +459,8 @@ public class TableroController {
             return null;
         }
     }
+
+
 
     private boolean LetraValida(String letra){
         Pattern pattern = Pattern.compile("[A-Z]");
