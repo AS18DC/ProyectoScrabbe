@@ -48,12 +48,12 @@
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <TextField fx:id="textJugador2" prefHeight="30.0" prefWidth="154.0" style="-fx-background-color: #f8ecc2; -fx-border-color: #8b5a2b; -fx-border-width: 2;">
+                        <TextField fx:id="textJugador1" prefHeight="30.0" prefWidth="154.0" style="-fx-background-color: #f8ecc2; -fx-border-color: #8b5a2b; -fx-border-width: 2;">
                            <HBox.margin>
                               <Insets left="40.0" right="130.0" />
                            </HBox.margin>
                         </TextField>
-                        <TextField fx:id="textJugador21" layoutX="40.0" layoutY="21.0" prefHeight="30.0" prefWidth="154.0" style="-fx-background-color: #f8ecc2; -fx-border-color: #8b5a2b; -fx-border-width: 2;">
+                        <TextField fx:id="textJugador2" layoutX="40.0" layoutY="21.0" prefHeight="30.0" prefWidth="154.0" style="-fx-background-color: #f8ecc2; -fx-border-color: #8b5a2b; -fx-border-width: 2;">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
