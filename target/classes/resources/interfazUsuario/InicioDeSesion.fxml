@@ -12,7 +12,7 @@
    <children>
       <HBox alignment="CENTER" prefHeight="121.0" prefWidth="600.0">
          <children>
-            <Label alignment="CENTER" prefHeight="128.0" prefWidth="601.0" style="-fx-border-color: #8b5a2b; -fx-background-color: #d7b899; -fx-border-width: 3; -fx-text-fill: #6b4226;" text="+++ SCRABBLE +++" textAlignment="CENTER">
+            <Label alignment="CENTER" prefHeight="263.0" prefWidth="871.0" style="-fx-border-color: #8b5a2b; -fx-background-color: #d7b899; -fx-border-width: 3; -fx-text-fill: #6b4226;" text="+++ SCRABBLE +++" textAlignment="CENTER">
                <font>
                   <Font size="30.0" />
                </font>
@@ -22,7 +22,7 @@
             </Label>
          </children>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="513.0" prefWidth="600.0">
+      <HBox alignment="CENTER" prefHeight="489.0" prefWidth="837.0">
          <children>
             <VBox prefHeight="460.0" prefWidth="515.0">
                <children>
