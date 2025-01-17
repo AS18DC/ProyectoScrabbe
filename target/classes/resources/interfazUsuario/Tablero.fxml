@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuarios.TableroController">
+<BorderPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuarios.TableroController">
     <!-- Parte superior: Alias de jugadores y puntajes -->
     <top>
         <HBox alignment="CENTER" spacing="20" style="-fx-padding: 10; -fx-background-color: #f4f4f4;">
             <!-- Jugador 1 -->
             <VBox alignment="CENTER">
-                <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Jugador 1" />
+                <Label fx:id="jugador1" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Jugador 1" />
                 <Label fx:id="scoreJugador1" style="-fx-font-size: 14px;" text="Score: 0" />
             </VBox>
             <!-- Jugador 2 -->
             <VBox alignment="CENTER">
-                <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Jugador 2" />
+                <Label fx:id="jugador2" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Jugador 2" />
                 <Label fx:id="scoreJugador2" style="-fx-font-size: 14px;" text="Score: 0" />
             </VBox>
             <!-- Puedes agregar más jugadores aquí -->
@@ -335,7 +341,7 @@
             <!-- Agrega más botones según las letras disponibles -->
             <HBox alignment="CENTER" spacing="5" style="-fx-padding: 10; -fx-background-color: #e6e6e6;">
                 <Button fx:id="statsButton" text="=" />
-                <Button onAction="#onBolsaFichasClick" text="Bolsa de fichas" />
+                <Button fx:id="bagButton" text="Bolsa de fichas" />
                 <Button fx:id="sendButton" text="ENVIAR" />
             </HBox>
             <!-- Botones de letras -->
@@ -348,7 +354,7 @@
             <Button fx:id="btnLetraG" style="-fx-font-size: 14px; -fx-background-color: #ffffff;" text="G" />
             <HBox alignment="CENTER" spacing="5" style="-fx-padding: 10; -fx-background-color: #e6e6e6;">
                 <Button fx:id="passButton" text="Pasar" />
-                <Button fx:id="btnChangeAll" text="Cambiar todas las fichas" />
+                <Button fx:id="changeButton" text="Cambiar todas las fichas"/>
             </HBox>
         </HBox>
     </bottom>
