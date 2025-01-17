@@ -197,7 +197,7 @@ public class Partida {
         jugador.printCharacters();
         FichasJugador comodin = jugador.getPlayerCharacters();
         while(comodin.existeComodin()){
-            System.out.println(Main.TEXTO_VERDE+"Te has conseguido un comodín, cámbialo por una letra!!"+ Main.RESET);
+            System.out.println("Te has conseguido un comodín, cámbialo por una letra!!");
             String letra = Main.read.next();
             letra = letra.toUpperCase();
             while (!LetraValida(letra)){
@@ -242,7 +242,7 @@ public class Partida {
                     salirDePartida();
                     return true;
                 default:
-                    System.out.println(Main.TEXTO_ROJO+"Opción inválida. Por favor, selecciona una opción válida."+ Main.RESET);
+                    System.out.println("Opción inválida. Por favor, selecciona una opción válida.");
             }
         }while (!finalizar);
         return false;
@@ -281,17 +281,17 @@ public class Partida {
     public boolean colocarPalabra(Jugador jugador) {
         boolean result = false;
         while (jugador.getPlayerCharacters().existeComodin()) {
-            System.out.println(Main.TEXTO_VERDE+"Te has conseguido un comodín, cámbialo por una letra!!" + Main.RESET);
+            System.out.println("Te has conseguido un comodín, cámbialo por una letra!!");
             String letra = Main.read.next();
             letra = letra.toUpperCase();
             jugador.getPlayerCharacters().setComodin(letra);
         }
         Diccionario diccionario = new Diccionario();
-        System.out.println(Main.TEXTO_AZUL+"Escribe la palabra que quieres poner" + Main.RESET);
+        System.out.println("Escribe la palabra que quieres poner");
         String word = Main.read.next();
         int cont = 0;
         while (!diccionario.existePalabra(word)) {
-            System.out.println(Main.TEXTO_ROJO+"Esa palabra no existe en el diccionario, por favor ingrese otra" + Main.RESET);
+            System.out.println("Esa palabra no existe en el diccionario, por favor ingrese otra");
             word = Main.read.next();
             cont++;
             if (cont == 2) {
@@ -343,11 +343,11 @@ public class Partida {
     public boolean chooseWinner() {
         if (this.bag.remaning() == 0) {
             if (this.jugador1.numberOfCharacters() == 1) {
-                System.out.println(Main.FONDO_VERDE+ Main.TEXTO_NEGRO +"el ganador es: " + jugador1.getAlias()+Main.RESET);
+                System.out.println("el ganador es: " + jugador1.getAlias());
                 this.winner = 1;
                 return true;
             } else if (this.jugador2.numberOfCharacters() == 1) {
-                System.out.println(Main.FONDO_VERDE+ Main.TEXTO_NEGRO +"el ganador es: " + jugador2.getAlias()+Main.RESET);
+                System.out.println("el ganador es: " + jugador2.getAlias());
                 this.winner = 2;
                 return true;
             }
