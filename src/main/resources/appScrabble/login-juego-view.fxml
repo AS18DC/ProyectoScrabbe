@@ -24,23 +24,39 @@
 
                 <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #14241B;" text="Jugador 2:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
                 <TextField fx:id="jugador2Field" promptText="Ingrese el nombre del jugador" style="-fx-background-color: #E0E2E1; -fx-text-fill: #14241B; -fx-background-radius: 5px;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <columnConstraints>
-               <ColumnConstraints />
-               <ColumnConstraints />
-            </columnConstraints>
-            <rowConstraints>
-               <RowConstraints />
-               <RowConstraints />
-            </rowConstraints>
+
+                <!-- Labels to display the letters drawn by each player -->
+                <Label fx:id="jugador1LetraLabel" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #14241B;" text="Letra Jugador 1:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Label fx:id="jugador1Letra" style="-fx-font-size: 14px; -fx-text-fill: #14241B;" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label fx:id="jugador2LetraLabel" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #14241B;" text="Letra Jugador 2:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <Label fx:id="jugador2Letra" style="-fx-font-size: 14px; -fx-text-fill: #14241B;" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                <!-- Label to display the current player's turn -->
+                <Label fx:id="turnoLabel" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #14241B;" text="Turno de:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <Label fx:id="turnoJugador" style="-fx-font-size: 14px; -fx-text-fill: #14241B;" text="" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <columnConstraints>
+                    <ColumnConstraints />
+                    <ColumnConstraints />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                </rowConstraints>
             </GridPane>
 
+            <Button style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-background-color: #68A042; -fx-text-fill: #14241B; -fx-background-radius: 10px;" fx:id="sortearTurnoButton" text="Sortear Turno" onAction="#onSortearTurnoClick"/>
             <Button onAction="#onIniciarJuegoClick" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-background-color: #68A042; -fx-text-fill: #14241B; -fx-background-radius: 10px;" text="Iniciar Juego" />
+
         </VBox>
     </HBox>
-   <columnConstraints>
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-   </rowConstraints>
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
 </GridPane>

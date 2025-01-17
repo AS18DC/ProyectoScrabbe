@@ -21,9 +21,8 @@ class Juego {
     private long tiempoInicio;
     private Diccionario diccionario;
     private int contadorMovimientos;
-    private boolean turnoActual; // true si es el turno del jugador1, false si es el turno del jugador2
-
-
+    private boolean turnoActual;
+    private boolean turnoInicial;
 
     /**
      *
@@ -79,6 +78,10 @@ class Juego {
 
     public void pasarTurno() {
         turnoActual = !turnoActual;
+    }
+
+    public void setTurnoInicial(boolean turnoInicial) {
+        this.turnoInicial = turnoInicial;
     }
 
     public boolean esTurnoJugador1() {

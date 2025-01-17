@@ -29,7 +29,7 @@ public class MainJuegoController {
             loginJugadorController.setJuego(juego);
 
             Stage stage = new Stage();
-            stage.setTitle("Login - Scrabble");
+            stage.setTitle("Juego - Scrabble");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

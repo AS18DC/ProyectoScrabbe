@@ -12,6 +12,8 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.TextAlignment;
+import javafx.scene.text.TextFlow;
 
 import java.util.List;
 
@@ -107,16 +109,23 @@ public class PartidaController {
 
             for (String letra : letras) {
                 int puntaje = juego.saco.obtenerPuntajeDeLaLetra(letra);
-                Button botonFicha = new Button(letra + " (" + puntaje + ")");
+                Text baseLetter = new Text(letra);
+
+                Text subscriptScore = new Text(String.valueOf(puntaje));
+                subscriptScore.setStyle("-fx-font-size: 10; -fx-translate-y: 5;");
+                TextFlow textFlow = new TextFlow(baseLetter, subscriptScore);
+                textFlow.setTextAlignment(TextAlignment.CENTER);
+
+                Button botonFicha = new Button();
+                botonFicha.setGraphic(textFlow);
                 botonFicha.setPrefSize(50, 50);
-                botonFicha.setStyle("-fx-font-size: 14;");
+                botonFicha.setStyle("-fx-font-size: 18;");
                 botonFicha.setOnAction(e -> seleccionarLetra(letra));
                 letrasJugador.getChildren().add(botonFicha);
             }
         } else {
             System.err.println("letrasJugador is not initialized.");
         }
-
     }
 
     private void seleccionarLetra(String letra) {
@@ -135,13 +144,16 @@ public class PartidaController {
                 if (fila != null && col != null) {
                     // Crear un nuevo texto con la letra seleccionada
                     int puntaje = juego.saco.obtenerPuntajeDeLaLetra(letraSeleccionada);
-                    Text texto = new Text(letraSeleccionada + " (" + puntaje + ")");
-
-                    texto.setStyle("-fx-font-weight: bold;");
+                    Text baseLetter = new Text(letraSeleccionada);
+                    baseLetter.setStyle("-fx-font-size: 18;");
+                    Text subscriptScore = new Text(String.valueOf(puntaje));
+                    subscriptScore.setStyle("-fx-font-size: 10; -fx-translate-y: 5;");
+                    TextFlow textFlow = new TextFlow(baseLetter, subscriptScore);
+                    textFlow.setTextAlignment(TextAlignment.CENTER);
 
                     // Crear un StackPane para contener el texto
                     StackPane celda = new StackPane();
-                    celda.getChildren().add(texto );
+                    celda.getChildren().add(textFlow);
 
                     // Reemplazar el Label con el StackPane en el GridPane
                     tablero.getChildren().remove(clickedLabel);
@@ -157,7 +169,6 @@ public class PartidaController {
         } else {
             System.err.println("Clicked source is not a Label");
         }
-
     }
 
     public void resaltarJugadorEnTurno(boolean esJugador1Turno) {
