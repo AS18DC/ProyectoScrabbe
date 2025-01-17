@@ -1,29 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="469.0" prefWidth="439.0" spacing="20" style="-fx-padding: 20; -fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" prefHeight="469.0" prefWidth="439.0" spacing="20" style="-fx-padding: 20; -fx-background-color: #fff5e6;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
 
-    <!-- Etiqueta para el mensaje de felicitación -->
-    <Label fx:id="lblCongratulations" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #2e7d32;" text="¡Felicidades!" />
+                                  <!-- Etiqueta para el mensaje de felicitación -->
+    <Label fx:id="lblCongratulations" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #6b4226;" text="¡Felicidades!" />
+   <HBox prefHeight="25.0" prefWidth="399.0">
+      <children>
+      
+                <!-- Etiqueta para mostrar el nombre del jugador ganador -->
+          <Label fx:id="lblWinnerName" alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="194.0" style="-fx-font-size: 18; -fx-text-fill: #6b4226;" text="Ganador:" />
+         <Label fx:id="lblWinnerName1" layoutX="10.0" layoutY="10.0" style="-fx-font-size: 18; -fx-text-fill: #6b4226;" />
+      </children>
+   </HBox>
 
-    <!-- Etiqueta para mostrar el nombre del jugador ganador -->
-    <Label fx:id="lblWinnerName" style="-fx-font-size: 18; -fx-text-fill: #000;" text="Ganador: [Nombre del jugador]" />
-
-    <!-- Botones para mostrar información adicional -->
-    <Button fx:id="btnPlayer1Points" style="-fx-font-size: 14; -fx-background-color: #1976d2; -fx-text-fill: white;" text="Puntos del Jugador 1: [Puntos]" />
-    <Button fx:id="btnPlayer2Points" style="-fx-font-size: 14; -fx-background-color: #1976d2; -fx-text-fill: white;" text="Puntos del Jugador 2: [Puntos]" />
+          <!-- Botones para mostrar información adicional -->
+    <Button fx:id="btnPlayer1Points" prefHeight="29.0" prefWidth="218.0" style="-fx-font-size: 14; -fx-background-color: linear-gradient(to bottom, #8b5a2b, #70461f); -fx-text-fill: white; -fx-background-radius: 10;" text="Puntos del Jugador 1:" />
+    <Button fx:id="btnPlayer2Points" prefWidth="248.0" style="-fx-font-size: 14; -fx-background-color: linear-gradient(to bottom, #8b5a2b, #70461f); -fx-text-fill: white; -fx-background-radius: 10;" text="Puntos del Jugador 2:" />
 
     <!-- Botones para mostrar palabras jugadas por cada jugador -->
-    <Button fx:id="btnWordsPlayer1" style="-fx-font-size: 14; -fx-background-color: #1976d2; -fx-text-fill: white;" text="Palabras Jugadas por Jugador 1: [Cantidad]" />
-    <Button fx:id="btnWordsPlayer2" style="-fx-font-size: 14; -fx-background-color: #1976d2; -fx-text-fill: white;" text="Palabras Jugadas por Jugador 2: [Cantidad]" />
+    <Button fx:id="btnWordsPlayer1" style="-fx-font-size: 14; -fx-background-color: linear-gradient(to bottom, #8b5a2b, #70461f); -fx-text-fill: white; -fx-background-radius: 10;" text="Palabras Jugadas por Jugador 1:" />
+    <Button fx:id="btnWordsPlayer2" style="-fx-font-size: 14; -fx-background-color: linear-gradient(to bottom, #8b5a2b, #70461f); -fx-text-fill: white; -fx-background-radius: 10;" text="Palabras Jugadas por Jugador 2:" />
 
-    <Button fx:id="btnGameTime" style="-fx-font-size: 14; -fx-background-color: #1976d2; -fx-text-fill: white;" text="Tiempo de Partida: [Duración]" />
+    <Button fx:id="btnGameTime" style="-fx-font-size: 14; -fx-background-color: linear-gradient(to bottom, #8b5a2b, #70461f); -fx-text-fill: white; -fx-background-radius: 10;" text="Tiempo de Partida:" />
 
     <!-- Botones para acciones de reiniciar o salir -->
     <VBox alignment="CENTER" spacing="10">
-        <Button fx:id="btnExitGame" style="-fx-font-size: 14; -fx-background-color: #d32f2f; -fx-text-fill: white;" text="Salir" />
+        <Button fx:id="btnExitGame" style="-fx-font-size: 14; -fx-background-color: linear-gradient(to bottom, #d32f2f, #c62828); -fx-text-fill: white; -fx-background-radius: 10;" text="Salir" />
     </VBox>
 
 </VBox>
