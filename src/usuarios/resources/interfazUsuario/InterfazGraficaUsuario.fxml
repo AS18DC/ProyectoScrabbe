@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuarios.UserMenuController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="600.0">
+         <children>
+            <Label text="Menu de Jugadores">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="701.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="563.0" prefWidth="600.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onButtonRegistrar" prefHeight="90.0" prefWidth="130.0" text="Registrar Jugador" />
+                  <Region prefHeight="35.0" prefWidth="350.0" />
+                  <Button mnemonicParsing="false" onAction="#onButtonModificar" prefHeight="90.0" prefWidth="130.0" text="Modificar Jugador" />
+                  <Region prefHeight="35.0" prefWidth="350.0" />
+                  <Button mnemonicParsing="false" onAction="#onButtonEliminar" prefHeight="90.0" prefWidth="130.0" text="Eliminar Jugador" />
+                  <Region prefHeight="35.0" prefWidth="200.0" />
+                  <Button mnemonicParsing="false" onAction="#onButtonEstadisticas" prefHeight="90.0" prefWidth="130.0" text="Mostrar Estadisticas &#10;de Jugador" textAlignment="CENTER" />
+                  <Region prefHeight="35.0" prefWidth="350.0" />
+                  <Button mnemonicParsing="false" onAction="#onButtonSalir" prefHeight="90.0" prefWidth="130.0" text="Salir" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

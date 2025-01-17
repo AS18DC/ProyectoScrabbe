@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuarios.MenuEstadisticasPartidaController">
+    <!-- Encabezado -->
+    <top>
+        <Label style="-fx-font-size: 36px; -fx-padding: 20; -fx-alignment: center;" text="Estadísticas de Partidas" BorderPane.alignment="CENTER" />
+    </top>
+
+    <!-- Contenido principal -->
+    <center>
+        <VBox alignment="CENTER" spacing="25" style="-fx-padding: 40;">
+            <HBox alignment="CENTER" spacing="20">
+                <Label style="-fx-font-size: 18px;" text="Jugador 1:" />
+                <TextField fx:id="campoJugador1" editable="false" promptText="Alias Jugador 1" style="-fx-font-size: 16px; -fx-pref-width: 200px;" />
+                <Label style="-fx-font-size: 18px;" text="Puntos:" />
+                <TextField fx:id="campoPuntosJugador1" editable="false" promptText="Puntos Jugador 1" style="-fx-font-size: 16px; -fx-pref-width: 200px;" />
+                <Label style="-fx-font-size: 18px;" text="Palabras:" />
+                <TextField fx:id="campoPalabrasJugador1" editable="false" promptText="Palabras Jugador 1" style="-fx-font-size: 16px; -fx-pref-width: 200px;" />
+            </HBox>
+            <HBox alignment="CENTER" spacing="20">
+                <Label style="-fx-font-size: 18px;" text="Jugador 2:" />
+                <TextField fx:id="campoJugador2" editable="false" promptText="Alias Jugador 2" style="-fx-font-size: 16px; -fx-pref-width: 200px;" />
+                <Label style="-fx-font-size: 18px;" text="Puntos:" />
+                <TextField fx:id="campoPuntosJugador2" editable="false" promptText="Puntos Jugador 2" style="-fx-font-size: 16px; -fx-pref-width: 200px;" />
+                <Label style="-fx-font-size: 18px;" text="Palabras:" />
+                <TextField fx:id="campoPalabrasJugador2" editable="false" promptText="Palabras Jugador 2" style="-fx-font-size: 16px; -fx-pref-width: 200px;" />
+            </HBox>
+            <HBox alignment="CENTER" spacing="20">
+                <Label style="-fx-font-size: 18px;" text="Ganador:" />
+                <TextField fx:id="campoGanador" editable="false" promptText="Alias del Ganador" style="-fx-font-size: 16px; -fx-pref-width: 200px;" />
+            </HBox>
+            <HBox alignment="CENTER" spacing="20">
+                <Label style="-fx-font-size: 18px;" text="Duración de la Partida:" />
+                <TextField fx:id="campoDuracion" editable="false" promptText="Ej: 1h 20m" style="-fx-font-size: 16px; -fx-pref-width: 200px;" />
+            </HBox>
+        </VBox>
+    </center>
+
+    <!-- Pie de página -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="20" style="-fx-padding: 20;">
+            <Button fx:id="btnEstadisticas" onAction="#cargarEstadisticas" style="-fx-font-size: 16px; -fx-pref-width: 150px;" text="Estadísticas" />
+            <Button fx:id="btnRegresar" onAction="#regresarMenuPrincipal" style="-fx-font-size: 16px; -fx-pref-width: 150px;" text="Regresar" />
+        </HBox>
+    </bottom>
+</BorderPane>
