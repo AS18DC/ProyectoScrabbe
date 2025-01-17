@@ -13,6 +13,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.control.ButtonType;
 import java.util.Optional;
 import juego.*;
+import juego.Character;
 import juego.Main;
 import juego.Tablero;
 
@@ -49,7 +50,7 @@ public class TableroController {
     // Mapa para rastrear qué botón del HBox corresponde a cada letra colocada
     private Map<String, Button> usedTilesMap = new HashMap<>();
 
-    public void iniciarPartida(Jugador jugador1, Jugador jugador2){
+    public void iniciarPartida(Jugador jugador1, Jugador jugador2) {
         this.partida = new Partida(jugador1, jugador2);
         this.pass = 0;
     }
@@ -59,12 +60,12 @@ public class TableroController {
         iniciarPartida(new Jugador("aharon", "aharon@gmail.com"), new Jugador("jose", "jose@gmail.com"));
 
 
-        if (partida.getActualTurn() == 1){
+        if (partida.getActualTurn() == 1) {
             FichasJugador fichas1 = partida.getJugador1().getPlayerCharacters();
-            while(fichas1.existeComodin()){
+            while (fichas1.existeComodin()) {
                 String nuevaFicha = showAlertComodin("FELICIDADES", "Te has encontrado un comodin, intercambialo por una letra");
                 nuevaFicha = nuevaFicha.toUpperCase();
-                while (!LetraValida(nuevaFicha)){
+                while (!LetraValida(nuevaFicha)) {
                     System.out.println("Necesitas elegir una letra entre la A-Z o CH,LL,RR, intenta de nuevo");
                     nuevaFicha = showAlertComodin("FELICIDADES", "Necesitas elegir una letra entre la A-Z o CH,LL,RR, intenta de nuevo");
                     nuevaFicha = nuevaFicha.toUpperCase();
@@ -74,12 +75,12 @@ public class TableroController {
                 fichas1 = partida.getJugador1().getPlayerCharacters();
             }
             mostrarFichas(partida.getJugador1());
-        }else {
+        } else {
             FichasJugador fichas2 = partida.getJugador2().getPlayerCharacters();
-            while(fichas2.existeComodin()){
+            while (fichas2.existeComodin()) {
                 String nuevaFicha2 = showAlertComodin("FELICIDADES", "Te has encontrado un comodin, intercambialo por una letra");
                 nuevaFicha2 = nuevaFicha2.toUpperCase();
-                while (!LetraValida(nuevaFicha2)){
+                while (!LetraValida(nuevaFicha2)) {
                     System.out.println("Necesitas elegir una letra entre la A-Z o CH,LL,RR, intenta de nuevo");
                     nuevaFicha2 = showAlertComodin("FELICIDADES", "Necesitas elegir una letra entre la A-Z o CH,LL,RR, intenta de nuevo");
                     nuevaFicha2 = nuevaFicha2.toUpperCase();
@@ -98,11 +99,7 @@ public class TableroController {
             }
             sendButton.setOnMouseClicked(event -> onSendClick());
             passButton.setOnMouseClicked(event -> onPassClick());
-            if (partida.getActualTurn() ==1){
-                statsButton.setOnMouseClicked(event -> showPlayerStats(partida.getJugador1()));
-            }else {
-                statsButton.setOnMouseClicked(event -> showPlayerStats(partida.getJugador2()));
-            }
+            statsButton.setOnMouseClicked(event -> showPlayerStats());
         }
 
         // Asignar evento a los botones del tablero
@@ -245,30 +242,30 @@ public class TableroController {
         return word.toString();
     }
 
-    private void onSendClick(){
+    private void onSendClick() {
         String[][] tablero = getBoardAsMatrix(board);
         String palabra = getWordFromMatrix(tablero, fila, columna, horizontal);
 
-        if(!validarPalabra(palabra)){
+        if (!validarPalabra(palabra)) {
             showAlert("Palabra invalida", "La palabra que quieres colocar es invalida, por favor intenta con otra o pasa turno");
             return;
         }
 
-        if (partida.getActualTurn() == 1){
+        if (partida.getActualTurn() == 1) {
             partida.ubicarPalabra(palabra, fila, columna, horizontal, partida.getJugador1());
-            pass =0;
+            pass = 0;
         } else {
             partida.ubicarPalabra(palabra, fila, columna, horizontal, partida.getJugador2());
-            pass =0;
+            pass = 0;
         }
         partida.getTablero().mostrarTablero();
         System.out.println(palabra);
         partida.alternarTurno();
         columna = null;
         fila = null;
-        if (partida.getActualTurn() == 1){
+        if (partida.getActualTurn() == 1) {
             mostrarFichas(partida.getJugador1());
-        }else {
+        } else {
             mostrarFichas(partida.getJugador2());
         }
         for (Node node : playerTiles.getChildren()) {
@@ -279,33 +276,33 @@ public class TableroController {
         usedTilesMap = new HashMap<>();
     }
 
-    private void onPassClick(){
+    private void onPassClick() {
         partida.alternarTurno();
-        pass +=1;
-        if(pass == 4){
+        pass += 1;
+        if (pass == 4) {
             partida.chooseWinner();
         }
 
-        if (partida.getActualTurn() == 1){
+        if (partida.getActualTurn() == 1) {
             mostrarFichas(partida.getJugador1());
-        }else {
+        } else {
             mostrarFichas(partida.getJugador2());
         }
     }
 
-    private void mostrarFichas(Jugador jugador){
-        int index=0;
+    private void mostrarFichas(Jugador jugador) {
+        int index = 0;
         juego.FichasJugador fichasJugador = jugador.getPlayerCharacters();
         ArrayList<juego.Character> fichas = fichasJugador.getFichas();
-            for (Node node : playerTiles.getChildren()) {
-               if (node instanceof Button button){
-                   button.setText(fichas.get(index).getSymbol());
-               }
-               if (index < 6) index +=1;
+        for (Node node : playerTiles.getChildren()) {
+            if (node instanceof Button button) {
+                button.setText(fichas.get(index).getSymbol());
             }
+            if (index < 6) index += 1;
+        }
     }
 
-    private boolean validarPalabra(String palabra){
+    private boolean validarPalabra(String palabra) {
         Diccionario diccionario = new Diccionario();
         return diccionario.existePalabra(palabra);
     }
@@ -317,7 +314,14 @@ public class TableroController {
         alert.setContentText(message);
         alert.showAndWait();
     }
-    public void showPlayerStats(Jugador jugador) {
+
+    public void showPlayerStats() {
+        Jugador jugador;
+        if (partida.getActualTurn() == 1) {
+            jugador = partida.getJugador1();
+        } else {
+            jugador = partida.getJugador2();
+        }
         // Crear una nueva alerta
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Estadísticas del Jugador");
@@ -359,13 +363,30 @@ public class TableroController {
             return null;
         }
     }
-    private boolean LetraValida(String letra){
+
+    private boolean LetraValida(String letra) {
         Pattern pattern = Pattern.compile("[A-Z]");
         Matcher matcher = pattern.matcher(letra);
-        if (matcher.matches()){
+        if (matcher.matches()) {
             return true;
-        }
-        else return (letra.equals("RR") | letra.equals("CH") | letra.equals("LL"));
+        } else return (letra.equals("RR") | letra.equals("CH") | letra.equals("LL"));
+    }
+
+    @FXML
+    public void onBolsaFichasClick() {
+        SpanishBag bag = partida.getBag();
+
+        StringBuilder mensaje = new StringBuilder();
+        mensaje.append("Letras restantes en el saco:\n");
+
+        int letras = bag.numberOfCharacters();
+        mensaje.append("\nTotal de letras restantes: ").append(letras);
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Letras en el Saco");
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje.toString());
+        alert.showAndWait();
     }
 
 }

@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuarios.TableroController">
+<BorderPane prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.usuarios.TableroController">
     <!-- Parte superior: Alias de jugadores y puntajes -->
     <top>
         <HBox alignment="CENTER" spacing="20" style="-fx-padding: 10; -fx-background-color: #f4f4f4;">
@@ -341,7 +335,7 @@
             <!-- Agrega más botones según las letras disponibles -->
             <HBox alignment="CENTER" spacing="5" style="-fx-padding: 10; -fx-background-color: #e6e6e6;">
                 <Button fx:id="statsButton" text="=" />
-                <Button fx:id="btnBag" text="Bolsa de fichas" />
+                <Button onAction="#onBolsaFichasClick" text="Bolsa de fichas" />
                 <Button fx:id="sendButton" text="ENVIAR" />
             </HBox>
             <!-- Botones de letras -->
